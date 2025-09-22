@@ -1,5 +1,6 @@
 package br.com.hat.hat_api.service;
 
+import br.com.hat.hat_api.dto.MovimentacaoDTO;
 import br.com.hat.hat_api.dto.TaxaOcupacaoDTO;
 import br.com.hat.hat_api.repository.LeitoRepository;
 import org.springframework.stereotype.Service;
@@ -24,6 +25,20 @@ public class LeitoService {
                         ((Number) obj[1]).intValue(),
                         ((Number) obj[2]).intValue(),
                         ((Number) obj[3]).intValue()
+                ))
+                .toList();
+    }
+
+    public List<MovimentacaoDTO> getMovimentacao(String dataini, String datafim) {
+        List<Object[]> result = leitoRepository.findMovimentacao(dataini, datafim);
+
+        return result.stream()
+                .map(obj -> new MovimentacaoDTO(
+                        ((String) obj[0]).trim(),
+                        ((Number) obj[1]).intValue(),
+                        ((Number) obj[2]).intValue(),
+                        ((Number) obj[3]).intValue(),
+                        ((Number) obj[4]).intValue()
                 ))
                 .toList();
     }
