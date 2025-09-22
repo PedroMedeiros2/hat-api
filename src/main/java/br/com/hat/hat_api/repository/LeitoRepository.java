@@ -1,0 +1,71 @@
+// src/main/java/br/com/hat/hat_api/repository/LeitoRepository.java
+package br.com.hat.hat_api.repository;
+
+import br.com.hat.hat_api.model.Leito;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
+import org.springframework.stereotype.Repository;
+
+import java.util.List;
+
+@Repository
+public interface LeitoRepository extends JpaRepository<Leito, Long> {
+
+    @Query(value = """
+        WITH ocupacao AS (
+            SELECT 
+                CASE
+                    WHEN v.cod = 1 THEN 'SUS'
+                    WHEN v.cod = 2 THEN 'Particular'
+                    ELSE 'Convenio'
+                END AS convenio,
+                COUNT(*) AS leitos_ocupados
+            FROM 
+                RILEITOS L
+                INNER JOIN RIACOMOD A ON L.ACOMOD = A.ACOMOD
+                INNER JOIN RIBLOCOS B ON B.BLOCO = A.BLOCO AND B.BLOCO = L.BLOCO
+                INNER JOIN RICADINT CI ON CI.REG = L.REG
+                LEFT JOIN tbconven v ON v.cod = CI.CONV
+            WHERE 
+                B.BLOCO IN (:blocos)
+                AND L.STATUS <> 'I'
+                AND L.REG <> 0
+            GROUP BY
+                CASE
+                    WHEN v.cod = 1 THEN 'SUS'
+                    WHEN v.cod = 2 THEN 'Particular'
+                    ELSE 'Convenio'
+                END
+        ),
+        total_leitos AS (
+            SELECT 
+                COUNT(*) AS total_leitos
+            FROM 
+                RILEITOS L
+                INNER JOIN RIACOMOD A ON L.ACOMOD = A.ACOMOD
+                INNER JOIN RIBLOCOS B ON B.BLOCO = A.BLOCO AND B.BLOCO = L.BLOCO
+            WHERE 
+                B.BLOCO IN (:blocos)
+                AND L.STATUS <> 'I'
+        ),
+        ocupados_totais AS (
+            SELECT 
+                SUM(leitos_ocupados) AS total_ocupados
+            FROM ocupacao
+        )
+        
+        SELECT 
+            o.convenio,
+            o.leitos_ocupados,
+            t.total_leitos,
+            t.total_leitos - ot.total_ocupados AS leitos_disponiveis
+        FROM 
+            ocupacao o
+            CROSS JOIN total_leitos t
+            CROSS JOIN ocupados_totais ot
+        ORDER BY 
+            o.convenio
+        """, nativeQuery = true)
+    List<Object[]> getTaxaOcupacaoByBlocos(@Param("blocos") List<String> blocos);
+}
