@@ -70,63 +70,104 @@ public interface LeitoRepository extends JpaRepository<Leito, Long> {
 
 
     @Query(value = """
-                SELECT 
-                    CASE WHEN i.conv = 1 THEN 'SUS'
-                         WHEN i.conv = 2 THEN 'Particular'
-                         ELSE 'Convenio' END AS tipo_convenio,
+                SELECT
+                    CAST(i.entrada AS DATE) AS data_entrada,
+                    CASE\s
+                        WHEN i.conv = 1 THEN 'SUS'
+                        WHEN i.conv = 2 THEN 'Particular'
+                        ELSE 'Convenio'
+                    END AS tipo_convenio,
                     COUNT(*) AS qtd
                 FROM ricadint i
                 WHERE CAST(i.entrada AS DATE) BETWEEN CAST(:dataini AS DATE) AND CAST(:datafim AS DATE)
-                GROUP BY 1
+                GROUP BY\s
+                    CAST(i.entrada AS DATE),
+                    CASE\s
+                        WHEN i.conv = 1 THEN 'SUS'
+                        WHEN i.conv = 2 THEN 'Particular'
+                        ELSE 'Convenio'
+                    END
+                ORDER BY data_entrada, tipo_convenio;
             """, nativeQuery = true)
     List<Object[]> findInternacoes(@Param("dataini") String dataini, @Param("datafim") String datafim);
 
     @Query(value = """
-                SELECT 
-                    CASE WHEN i.conv = 1 THEN 'SUS'
-                         WHEN i.conv = 2 THEN 'Particular'
-                         ELSE 'Convenio' END AS tipo_convenio,
-                    COUNT(*) AS qtd
-                FROM ricadint i
-                WHERE i.alta IS NOT NULL
-                  AND CAST(i.alta AS DATE) BETWEEN CAST(:dataini AS DATE) AND CAST(:datafim AS DATE)
-                GROUP BY 1
+                SELECT\s
+                              CAST(i.alta AS DATE) AS data_alta,
+                              CASE\s
+                                  WHEN i.conv = 1 THEN 'SUS'
+                                  WHEN i.conv = 2 THEN 'Particular'
+                                  ELSE 'Convenio'
+                              END AS tipo_convenio,
+                              COUNT(*) AS qtd
+                          FROM ricadint i
+                          WHERE i.alta IS NOT NULL
+                            AND CAST(i.alta AS DATE) BETWEEN CAST(:dataini AS DATE) AND CAST(:datafim AS DATE)
+                          GROUP BY\s
+                              CAST(i.alta AS DATE),
+                              CASE\s
+                                  WHEN i.conv = 1 THEN 'SUS'
+                                  WHEN i.conv = 2 THEN 'Particular'
+                                  ELSE 'Convenio'
+                              END
+                          ORDER BY data_alta, tipo_convenio;
             """, nativeQuery = true)
     List<Object[]> findAltas(@Param("dataini") String dataini, @Param("datafim") String datafim);
 
     @Query(value = """
-                SELECT 
-                    CASE WHEN i.conv = 1 THEN 'SUS'
-                         WHEN i.conv = 2 THEN 'Particular'
-                         ELSE 'Convenio' END AS tipo_convenio,
+                SELECT\s
+                    CAST(i.alta AS DATE) AS data_alta,
+                    CASE\s
+                        WHEN i.conv = 1 THEN 'SUS'
+                        WHEN i.conv = 2 THEN 'Particular'
+                        ELSE 'Convenio'
+                    END AS tipo_convenio,
                     COUNT(*) AS qtd
                 FROM ricadint i
                 WHERE i.alta IS NOT NULL
                   AND CAST(i.alta AS DATE) BETWEEN CAST(:dataini AS DATE) AND CAST(:datafim AS DATE)
                   AND i.motivo IN ('41','42','43','44','45')
-                GROUP BY 1
+                GROUP BY\s
+                    CAST(i.alta AS DATE),
+                    CASE\s
+                        WHEN i.conv = 1 THEN 'SUS'
+                        WHEN i.conv = 2 THEN 'Particular'
+                        ELSE 'Convenio'
+                    END
+                ORDER BY data_alta, tipo_convenio;
             """, nativeQuery = true)
     List<Object[]> findObitos(@Param("dataini") String dataini, @Param("datafim") String datafim);
 
     @Query(value = """
-                SELECT 
-                    CASE WHEN i.conv = 1 THEN 'SUS'
-                         WHEN i.conv = 2 THEN 'Particular'
-                         ELSE 'Convenio' END AS tipo_convenio,
+                SELECT\s
+                    CAST(i.alta AS DATE) AS data_alta,
+                    CASE\s
+                        WHEN i.conv = 1 THEN 'SUS'
+                        WHEN i.conv = 2 THEN 'Particular'
+                        ELSE 'Convenio'
+                    END AS tipo_convenio,
                     COUNT(*) AS qtd
                 FROM ricadint i
                 WHERE i.alta IS NOT NULL
                   AND CAST(i.alta AS DATE) BETWEEN CAST(:dataini AS DATE) AND CAST(:datafim AS DATE)
                   AND i.motivo IN ('41','42','43','44','45')
-                  AND DATEDIFF(MINUTE,
-                        CAST(i.entrada || ' ' || 
-                             SUBSTRING(i.horaent FROM 1 FOR 2) || ':' || 
+                  AND DATEDIFF(
+                        MINUTE,
+                        CAST(i.entrada || ' ' ||\s
+                             SUBSTRING(i.horaent FROM 1 FOR 2) || ':' ||\s
                              SUBSTRING(i.horaent FROM 3 FOR 2) AS TIMESTAMP),
-                        CAST(i.alta || ' ' || 
-                             SUBSTRING(i.horasai FROM 1 FOR 2) || ':' || 
+                        CAST(i.alta || ' ' ||\s
+                             SUBSTRING(i.horasai FROM 1 FOR 2) || ':' ||\s
                              SUBSTRING(i.horasai FROM 3 FOR 2) AS TIMESTAMP)
                       ) > 1440
-                GROUP BY 1
+                GROUP BY\s
+                    CAST(i.alta AS DATE),
+                    CASE\s
+                        WHEN i.conv = 1 THEN 'SUS'
+                        WHEN i.conv = 2 THEN 'Particular'
+                        ELSE 'Convenio'
+                    END
+                ORDER BY data_alta, tipo_convenio;
             """, nativeQuery = true)
     List<Object[]> findObitos24h(@Param("dataini") String dataini, @Param("datafim") String datafim);
 
