@@ -3,6 +3,7 @@ package br.com.hat.hat_api.service;
 import br.com.hat.hat_api.dto.MovimentacaoDTO;
 import br.com.hat.hat_api.dto.TaxaOcupacaoDTO;
 import br.com.hat.hat_api.repository.LeitoRepository;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
@@ -11,13 +12,10 @@ import java.util.function.BiConsumer;
 import java.util.function.BiFunction;
 
 @Service
+@RequiredArgsConstructor
 public class LeitoService {
 
     private final LeitoRepository leitoRepository;
-
-    public LeitoService(LeitoRepository leitoRepository) {
-        this.leitoRepository = leitoRepository;
-    }
 
     public List<TaxaOcupacaoDTO> getOcupacaoByBlocos(List<String> blocos) {
         List<Object[]> result = leitoRepository.getTaxaOcupacaoByBlocos(blocos);
