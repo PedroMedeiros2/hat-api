@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import java.time.LocalDate;
 import java.util.*;
 import java.util.function.BiConsumer;
+import java.util.function.BiFunction;
 
 @Service
 public class LeitoService {
@@ -34,38 +35,37 @@ public class LeitoService {
     public List<MovimentacaoDTO> getMovimentacao(String dataini, String datafim) {
         Map<String, MovimentacaoDTO> resultado = new HashMap<>();
 
-        BiConsumer<List<Object[]>, BiConsumer<MovimentacaoDTO, Integer>> processa = (dados, setter) -> {
-            for (Object[] row : dados) {
-                LocalDate data = ((java.sql.Date) row[0]).toLocalDate();
-                String tipo = (String) row[1];
-                int qtd = ((Number) row[2]).intValue();
-                
-                String chave = data.toString() + "_" + tipo;
+        BiConsumer<List<Object[]>, BiFunction<MovimentacaoDTO, Integer, MovimentacaoDTO>> processa =
+                (dados, updater) -> {
+                    for (Object[] row : dados) {
+                        LocalDate data = ((java.sql.Date) row[0]).toLocalDate();
+                        String tipo = (String) row[1];
+                        int qtd = ((Number) row[2]).intValue();
+                        String chave = data.toString() + "_" + tipo;
 
-                MovimentacaoDTO dto = resultado.get(chave);
-                if (dto == null) {
-                    dto = new MovimentacaoDTO();
-                    dto.setData(data);
-                    dto.setTipoConvenio(tipo);
-                    dto.setQtdInternacoes(0);
-                    dto.setQtdAltas(0);
-                    dto.setQtdObitos(0);
-                    dto.setQtdObitos24h(0);
-                    resultado.put(chave, dto);
-                }
+                        MovimentacaoDTO dtoAtual = resultado.getOrDefault(chave,
+                                new MovimentacaoDTO(data, tipo, 0, 0, 0, 0));
 
-                setter.accept(dto, qtd);
-            }
-        };
+                        MovimentacaoDTO dtoNovo = updater.apply(dtoAtual, qtd);
+                        resultado.put(chave, dtoNovo);
+                    }
+                };
 
-        processa.accept(leitoRepository.findInternacoes(dataini, datafim), (dto, qtd) -> dto.setQtdInternacoes(qtd));
-        processa.accept(leitoRepository.findAltas(dataini, datafim),        (dto, qtd) -> dto.setQtdAltas(qtd));
-        processa.accept(leitoRepository.findObitos(dataini, datafim),       (dto, qtd) -> dto.setQtdObitos(qtd));
-        processa.accept(leitoRepository.findObitos24h(dataini, datafim),    (dto, qtd) -> dto.setQtdObitos24h(qtd));
+        processa.accept(leitoRepository.findInternacoes(dataini, datafim),
+                (dto, qtd) -> new MovimentacaoDTO(dto.data(), dto.tipoConvenio(), qtd, dto.qtdAltas(), dto.qtdObitos(), dto.qtdObitos24h()));
+
+        processa.accept(leitoRepository.findAltas(dataini, datafim),
+                (dto, qtd) -> new MovimentacaoDTO(dto.data(), dto.tipoConvenio(), dto.qtdInternacoes(), qtd, dto.qtdObitos(), dto.qtdObitos24h()));
+
+        processa.accept(leitoRepository.findObitos(dataini, datafim),
+                (dto, qtd) -> new MovimentacaoDTO(dto.data(), dto.tipoConvenio(), dto.qtdInternacoes(), dto.qtdAltas(), qtd, dto.qtdObitos24h()));
+
+        processa.accept(leitoRepository.findObitos24h(dataini, datafim),
+                (dto, qtd) -> new MovimentacaoDTO(dto.data(), dto.tipoConvenio(), dto.qtdInternacoes(), dto.qtdAltas(), dto.qtdObitos(), qtd));
 
         List<MovimentacaoDTO> lista = new ArrayList<>(resultado.values());
-        lista.sort(Comparator.comparing(MovimentacaoDTO::getData)
-                .thenComparing(MovimentacaoDTO::getTipoConvenio));
+        lista.sort(Comparator.comparing(MovimentacaoDTO::data)
+                .thenComparing(MovimentacaoDTO::tipoConvenio));
 
         return lista;
     }
