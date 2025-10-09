@@ -24,6 +24,14 @@ public class ExameService {
                 .collect(Collectors.toList());
     }
 
+    public List<ExameDTO> listarExamesImagem(String dataini, String datafim) {
+        List<Object[]> resultados = exameRepository.findExamesImagem(dataini, datafim);
+
+        return resultados.stream()
+                .map(this::converterParaDTO)
+                .collect(Collectors.toList());
+    }
+
     private ExameDTO converterParaDTO(Object[] obj) {
         return new ExameDTO(
                 ((Number) obj[0]).longValue(),

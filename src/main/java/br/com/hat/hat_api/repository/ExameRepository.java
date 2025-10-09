@@ -9,6 +9,46 @@ import java.util.List;
 
 public interface ExameRepository extends JpaRepository<Exame, Long> {
     @Query(value = """
+                SELECT
+                    sl.reg,
+                    sl.data,
+                    sl.nsolicitante AS medico,
+                    sp.nome_exame AS exame,
+            
+                    CASE tb.cod
+                        WHEN 1 THEN 'SUS'
+                        WHEN 2 THEN 'Particular'
+                        ELSE 'Convenio'
+                    END AS convenio,
+            
+                    CASE sl.atend
+                        WHEN 'E' THEN 'Externo'
+                        WHEN 'I' THEN 'Interno'
+                        ELSE 'Desconhecido'
+                    END AS tipo_atendimento,
+            
+                    CASE sl.exame
+                        WHEN 'HOLT' THEN 'Holter'
+                        WHEN 'MA' THEN 'Mapa'
+                        WHEN 'TEST' THEN 'Esteira'
+                    END AS ato
+            
+                FROM silanexa sl
+                LEFT JOIN sicadate sc ON sl.id_sicadate = sc.id
+                LEFT JOIN (
+                    SELECT codalf, ato, MAX(nome) AS nome_exame
+                    FROM sitabpro
+                    GROUP BY codalf, ato
+                ) sp ON sp.codalf = sl.exame AND sp.ato = sl.ato
+                LEFT JOIN tbconven tb ON tb.cod = sc.conv
+                WHERE
+                    sl.data BETWEEN :dataini AND :datafim
+                    AND sl.ato = 90
+                    AND sl.exame IN ('HOLT', 'MA', 'TEST');
+            """, nativeQuery = true)
+    List<Object[]> findExamesCardio(@Param("dataini") String dataini, @Param("datafim") String datafim);
+
+    @Query(value = """
                 select
                     sl.reg,
                     sl.data,
@@ -49,6 +89,6 @@ public interface ExameRepository extends JpaRepository<Exame, Long> {
                 where sl.ato in (14, 25, 16, 24)
                   and sl.data between :dataini and :datafim;
             """, nativeQuery = true)
-    List<Object[]> findExamesCardio(@Param("dataini") String dataini, @Param("datafim") String datafim);
+    List<Object[]> findExamesImagem(@Param("dataini") String dataini, @Param("datafim") String datafim);
 
 }

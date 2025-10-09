@@ -25,4 +25,13 @@ public class ExameController {
         List<ExameDTO> exames = exameService.listarExamesCardio(dataini, datafim);
         return ResponseEntity.ok(exames);
     }
+
+    @GetMapping("/imagem")
+    public ResponseEntity<List<ExameDTO>> getExamesImagem(
+            @RequestParam String dataini,
+            @RequestParam String datafim) {
+
+        List<ExameDTO> exames = exameService.listarExamesImagem(dataini, datafim);
+        return ResponseEntity.ok(exames);
+    }
 }
