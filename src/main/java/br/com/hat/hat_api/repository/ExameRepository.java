@@ -31,6 +31,7 @@ public interface ExameRepository extends JpaRepository<Exame, Long> {
                         WHEN 'HOLT' THEN 'Holter'
                         WHEN 'MA' THEN 'Mapa'
                         WHEN 'TEST' THEN 'Esteira'
+                        WHEN 'ECG' THEN 'Eletrocardiograma'
                     END AS ato
             
                 FROM silanexa sl
@@ -44,7 +45,7 @@ public interface ExameRepository extends JpaRepository<Exame, Long> {
                 WHERE
                     sl.data BETWEEN :dataini AND :datafim
                     AND sl.ato = 90
-                    AND sl.exame IN ('HOLT', 'MA', 'TEST');
+                    AND sl.exame IN ('HOLT', 'MA', 'TEST', 'ECG');
             """, nativeQuery = true)
     List<Object[]> findExamesCardio(@Param("dataini") String dataini, @Param("datafim") String datafim);
 
