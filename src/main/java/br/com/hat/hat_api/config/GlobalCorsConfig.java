@@ -15,4 +15,7 @@ public class GlobalCorsConfig implements WebMvcConfigurer {
                 .allowedHeaders("*")
                 .allowCredentials(true);
     }
+
+    public static class PermissoesDbConfig {
+    }
 }
