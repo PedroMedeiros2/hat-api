@@ -1,7 +1,7 @@
-package br.com.hat.hat_api.controller;
+package br.com.hat.hat_api.spdata.controller;
 
-import br.com.hat.hat_api.dto.ExameDTO;
-import br.com.hat.hat_api.service.ExameService;
+import br.com.hat.hat_api.spdata.dto.ExameDTO;
+import br.com.hat.hat_api.spdata.service.ExameService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;

@@ -1,6 +1,6 @@
-package br.com.hat.hat_api.repository;
+package br.com.hat.hat_api.spdata.repository;
 
-import br.com.hat.hat_api.model.Leito;
+import br.com.hat.hat_api.spdata.model.Leito;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;

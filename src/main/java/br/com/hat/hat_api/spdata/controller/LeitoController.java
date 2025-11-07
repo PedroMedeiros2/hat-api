@@ -1,14 +1,12 @@
-package br.com.hat.hat_api.controller;
+package br.com.hat.hat_api.spdata.controller;
 
-import br.com.hat.hat_api.dto.MovimentacaoDTO;
-import br.com.hat.hat_api.dto.TaxaOcupacaoDTO;
-import br.com.hat.hat_api.service.LeitoService;
+import br.com.hat.hat_api.spdata.dto.MovimentacaoDTO;
+import br.com.hat.hat_api.spdata.dto.TaxaOcupacaoDTO;
+import br.com.hat.hat_api.spdata.service.LeitoService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-
-import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/leitos")

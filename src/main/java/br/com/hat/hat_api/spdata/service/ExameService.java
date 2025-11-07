@@ -1,8 +1,7 @@
-package br.com.hat.hat_api.service;
+package br.com.hat.hat_api.spdata.service;
 
-import br.com.hat.hat_api.dto.ExameDTO;
-import br.com.hat.hat_api.repository.ExameRepository;
-import jakarta.transaction.Transactional;
+import br.com.hat.hat_api.spdata.dto.ExameDTO;
+import br.com.hat.hat_api.spdata.repository.ExameRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

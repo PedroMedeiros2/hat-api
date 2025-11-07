@@ -1,8 +1,8 @@
-package br.com.hat.hat_api.service;
+package br.com.hat.hat_api.spdata.service;
 
-import br.com.hat.hat_api.dto.MovimentacaoDTO;
-import br.com.hat.hat_api.dto.TaxaOcupacaoDTO;
-import br.com.hat.hat_api.repository.LeitoRepository;
+import br.com.hat.hat_api.spdata.dto.MovimentacaoDTO;
+import br.com.hat.hat_api.spdata.dto.TaxaOcupacaoDTO;
+import br.com.hat.hat_api.spdata.repository.LeitoRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

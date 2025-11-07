@@ -1,4 +1,4 @@
-package br.com.hat.hat_api.dto;
+package br.com.hat.hat_api.spdata.dto;
 
 import java.time.LocalDate;
 
