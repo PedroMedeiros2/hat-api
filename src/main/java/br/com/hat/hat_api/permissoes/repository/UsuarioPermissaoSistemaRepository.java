@@ -10,6 +10,5 @@ import java.util.List;
 public interface UsuarioPermissaoSistemaRepository extends JpaRepository<UsuarioPermissaoSistema, Integer> {
 
     List<UsuarioPermissaoSistema> findByMatriculaUsuario(String matriculaUsuario);
-
-    boolean existsByMatriculaUsuarioAndPermissaoSistemaId(String matriculaUsuario, Integer permissaoId);
+    List<UsuarioPermissaoSistema> findByMatriculaUsuarioAndAtivo(String matricula, Integer ativo);
 }

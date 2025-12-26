@@ -5,7 +5,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 @Entity
-@Table(name = "usuario_permissao_sistema")
+@Table(name = "USUARIO_PERMISSAO_SISTEMA")
 @Getter
 @Setter
 public class UsuarioPermissaoSistema {
@@ -15,6 +15,8 @@ public class UsuarioPermissaoSistema {
 
     @Column(name = "matricula_usuario", nullable = false, length = 20)
     private String matriculaUsuario;
+
+    private Integer ativo;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_permissao")

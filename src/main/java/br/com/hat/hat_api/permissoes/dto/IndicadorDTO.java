@@ -8,12 +8,21 @@ import lombok.Setter;
 @Setter
 public class IndicadorDTO {
     private Integer id;
+    private String codigo;
     private String nome;
-    private Integer id_pai;
+    private String descricao;
+    private Integer idPai;
+    private String codigoPai;
 
     public IndicadorDTO(Indicador indicador) {
         this.id = indicador.getId();
+        this.codigo = indicador.getCodigo();
         this.nome = indicador.getNome();
-        this.id_pai = (indicador.getPai() != null) ? indicador.getPai().getId() : null;
+        this.descricao = indicador.getDescricao();
+
+        if (indicador.getPai() != null) {
+            this.idPai = indicador.getPai().getId();
+            this.codigoPai = indicador.getPai().getCodigo();
+        }
     }
 }

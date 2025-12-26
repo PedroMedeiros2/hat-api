@@ -7,13 +7,13 @@ import lombok.Setter;
 @Getter
 @Setter
 public class PermissaoSistemaDTO {
-    private Integer id;
     private String codigo;
     private String descricao;
+    private Integer ativo;
 
     public PermissaoSistemaDTO(PermissaoSistema permissao) {
-        this.id = permissao.getId();
         this.codigo = permissao.getCodigo();
         this.descricao = permissao.getDescricao();
+
     }
 }

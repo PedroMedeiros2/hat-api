@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table(name = "indicador")
@@ -28,6 +28,6 @@ public class Indicador {
     @JoinColumn(name = "id_pai")
     private Indicador pai;
 
-    @OneToMany(mappedBy = "pai", fetch = FetchType.LAZY)
-    private List<Indicador> filhos;
+    @OneToMany(mappedBy = "pai")
+    private Set<Indicador> filhos;
 }

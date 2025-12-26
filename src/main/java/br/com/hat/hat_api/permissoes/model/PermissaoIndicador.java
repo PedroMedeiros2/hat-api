@@ -6,7 +6,7 @@ import lombok.Setter;
 import org.hibernate.annotations.ColumnDefault;
 
 @Entity
-@Table(name = "permissao_indicador")
+@Table(name = "PERMISSAO_INDICADOR")
 @Getter
 @Setter
 public class PermissaoIndicador {

@@ -32,6 +32,9 @@ public class Funcionarios implements UserDetails {
     @Column(name = "STATUS")
     private String status;
 
+    @Column(name = "CPF")
+    private String cpf;
+
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return List.of(new SimpleGrantedAuthority("ROLE_USER"));

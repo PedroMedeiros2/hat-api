@@ -11,8 +11,7 @@ import java.util.Optional;
 public interface PermissaoIndicadorRepository extends JpaRepository<PermissaoIndicador, Integer> {
 
     List<PermissaoIndicador> findByMatriculaUsuarioAndPodeVisualizar(String matriculaUsuario, Integer podeVisualizar);
-
     boolean existsByMatriculaUsuarioAndIndicadorIdAndPodeVisualizar(String matriculaUsuario, Integer indicadorId, Integer podeVisualizar);
-
     Optional<PermissaoIndicador> findByMatriculaUsuarioAndIndicadorId(String matriculaUsuario, Integer indicadorId);
+    List<PermissaoIndicador> findByMatriculaUsuario(String matriculaUsuario);
 }
