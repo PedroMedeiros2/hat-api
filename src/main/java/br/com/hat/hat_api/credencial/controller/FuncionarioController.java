@@ -61,7 +61,7 @@ public class FuncionarioController {
 
         FuncionarioResponseDTO resultado = service.buscarAtivoPorMatricula(valor);
 
-        if (resultado == null) { // verifica se não encontrou o funcionário
+        if (resultado == null) {
             Map<String, Object> body = new HashMap<>();
             body.put("status", HttpStatus.NOT_FOUND.value());
             body.put("error", "Not Found");
