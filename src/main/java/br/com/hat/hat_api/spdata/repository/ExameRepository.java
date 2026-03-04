@@ -44,6 +44,7 @@ public interface ExameRepository extends JpaRepository<Exame, Long> {
                 LEFT JOIN tbconven tb ON tb.cod = sc.conv
                 WHERE
                     sl.data BETWEEN :dataini AND :datafim
+                    AND sl.pend_sadt = 'F'
                     AND sl.ato = 90
                     AND sl.exame IN ('HOLT', 'MA', 'TEST', 'ECG');
             """, nativeQuery = true)
@@ -88,6 +89,7 @@ public interface ExameRepository extends JpaRepository<Exame, Long> {
                 left join tbconven tb on tb.cod = sc.conv
             
                 where sl.ato in (14, 25, 16, 24)
+                  and sl.pend_sadt = 'F'
                   and sl.data between :dataini and :datafim;
             """, nativeQuery = true)
     List<Object[]> findExamesImagem(@Param("dataini") String dataini, @Param("datafim") String datafim);
