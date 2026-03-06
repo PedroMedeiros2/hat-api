@@ -5,6 +5,7 @@ import br.com.hat.hat_api.spdata.repository.AtendimentoRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.sql.Timestamp;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.Date;
@@ -29,15 +30,18 @@ public class AtendimentoService {
                 .collect(Collectors.toList());
     }
 
-    private AtendimentoDTO converterParaDTO(Object[] obj) {
-        return new AtendimentoDTO(
-                ((Number) obj[0]).longValue(),
-                (Date) obj[1],
-                (Character) obj[2],
-                (String) obj[3],
-                (String) obj[4],
-                (String) obj[5],
-                (String) obj[6]
+    private AtendimentoDTO converterParaDTO(Object[] r) {
+        return new AtendimentoDTO(((Number) r[0]).longValue(),
+                ((Number) r[1]).intValue(),
+                ((Timestamp) r[2]),
+                ((String) r[3]),
+                (String) r[4],
+                (String) r[5],
+                (String) r[6],
+                (String) r[7],
+                (String) r[8],
+                (String) r[9],
+                (String) r[10]
         );
     }
 }
