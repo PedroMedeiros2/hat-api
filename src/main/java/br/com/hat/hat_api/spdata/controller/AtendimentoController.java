@@ -27,7 +27,7 @@ public class AtendimentoController {
     private final AtendimentoService atendimentoService;
     private final UsuarioPermissaoService usuarioPermissaoService;
 
-    private static final String INDICADOR_COD_ATENDIMENTO = "HAT0007"; // ajuste se necessário
+    private static final String INDICADOR_COD_ATENDIMENTO = "HAT0009";
 
     private ResponseEntity<Map<String, Object>> acessoNegado(String mensagem) {
         Map<String, Object> body = new HashMap<>();
@@ -45,7 +45,7 @@ public class AtendimentoController {
         List<String> permissoes = authentication.getAuthorities()
                 .stream()
                 .map(GrantedAuthority::getAuthority)
-                .collect(Collectors.toList());
+                .toList();
 
         return !permissoes.contains("VISUALIZAR");
     }

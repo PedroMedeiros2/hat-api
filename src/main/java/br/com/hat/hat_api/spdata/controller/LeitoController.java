@@ -45,7 +45,7 @@ public class LeitoController {
         List<String> permissoes = authentication.getAuthorities()
                 .stream()
                 .map(GrantedAuthority::getAuthority)
-                .collect(Collectors.toList());
+                .toList();
 
         return !permissoes.contains("VISUALIZAR");
     }
