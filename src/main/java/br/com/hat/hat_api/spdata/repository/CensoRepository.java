@@ -98,7 +98,7 @@ public interface CensoRepository extends JpaRepository<Censo, Long> {
             JOIN tbespec te ON te.cod = ri.espec
             WHERE
                 ri.alta >= CAST(:dataini AS DATE)
-                AND ri.alta <= DATEADD(1 DAY TO CAST(:datafim AS DATE))
+                AND ri.alta < DATEADD(1 DAY TO CAST(:datafim AS DATE))
                 AND ri.bloco = :bloco_selecionado
                 AND ri.motivo NOT IN ('41','42','43','44','45')
             
@@ -119,7 +119,7 @@ public interface CensoRepository extends JpaRepository<Censo, Long> {
             JOIN tbespec te ON te.cod = ri.espec
             WHERE
                 ri.alta >= CAST(:dataini AS DATE)
-                AND ri.alta <= DATEADD(1 DAY TO CAST(:datafim AS DATE))
+                AND ri.alta < DATEADD(1 DAY TO CAST(:datafim AS DATE))
                 AND ri.bloco = :bloco_selecionado
                 AND ri.motivo IN ('41','42','43','44','45')
             
@@ -134,7 +134,7 @@ public interface CensoRepository extends JpaRepository<Censo, Long> {
                 ri.acomod,
                 tc.nome AS convenio,
                 te.nome AS especialidade,
-                CAST(ri.alta AS DATE)
+                CAST(rf.data AS DATE)
                 from ritransf rf
             JOIN ricadint ri ON ri.reg = rf.reg
             JOIN tbconven tc ON tc.cod = ri.conv
@@ -155,7 +155,7 @@ public interface CensoRepository extends JpaRepository<Censo, Long> {
                 ri.acomod,
                 tc.nome AS convenio,
                 te.nome AS especialidade,
-                CAST(ri.entrada AS DATE)
+                CAST(rf.data AS DATE)
                 from ritransf rf
             JOIN ricadint ri ON ri.reg = rf.reg
             JOIN tbconven tc ON tc.cod = ri.conv
