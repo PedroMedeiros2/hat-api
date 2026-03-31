@@ -28,7 +28,7 @@ public class CensoController {
     private final CensoService censoService;
     private final UsuarioPermissaoService usuarioPermissaoService;
 
-    private static final String INDICADOR_COD_CENSO = "HAT0007";
+    private static final String INDICADOR_COD_CENSO = "HAT0010";
 
     private ResponseEntity<Map<String, Object>> acessoNegado(String mensagem) {
         Map<String, Object> body = new HashMap<>();

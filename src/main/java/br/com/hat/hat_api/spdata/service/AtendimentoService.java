@@ -8,8 +8,12 @@ import org.springframework.stereotype.Service;
 import java.sql.Timestamp;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.util.Date;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
+import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 import java.util.stream.Collectors;
 
 @Service
@@ -20,18 +24,34 @@ public class AtendimentoService {
 
     public List<AtendimentoDTO> listarAtendimentos(String dataini, String datafim) {
 
-        LocalDateTime inicio = LocalDate.parse(dataini).atStartOfDay();
-        LocalDateTime fim = LocalDate.parse(datafim).atTime(23, 59, 59);
+        LocalDate inicio = LocalDate.parse(dataini);
+        LocalDate fim = LocalDate.parse(datafim);
 
-        List<Object[]> resultados = atendimentoRepository.findAtendimentos(inicio, fim);
+        ExecutorService executor = Executors.newFixedThreadPool(10);
 
-        return resultados.stream()
-                .map(this::converterParaDTO)
-                .collect(Collectors.toList());
+        try {
+            List<CompletableFuture<List<AtendimentoDTO>>> futures = inicio.datesUntil(fim.plusDays(1))
+                    .map(dia -> CompletableFuture.supplyAsync(() -> {
+                        LocalDateTime inicioDia = dia.atStartOfDay();
+                        LocalDateTime fimDia = dia.atTime(23, 59, 59);
+                        return atendimentoRepository.findAtendimentos(inicioDia, fimDia)
+                                .stream()
+                                .map(this::converterParaDTO)
+                                .collect(Collectors.toList());
+                    }, executor))
+                    .toList();
+
+            return futures.stream()
+                    .flatMap(f -> f.join().stream())
+                    .collect(Collectors.toList());
+        } finally {
+            executor.shutdown();
+        }
     }
 
     private AtendimentoDTO converterParaDTO(Object[] r) {
-        return new AtendimentoDTO(((Number) r[0]).longValue(),
+        return new AtendimentoDTO(
+                ((Number) r[0]).longValue(),
                 ((Number) r[1]).intValue(),
                 ((Timestamp) r[2]),
                 ((String) r[3]),
