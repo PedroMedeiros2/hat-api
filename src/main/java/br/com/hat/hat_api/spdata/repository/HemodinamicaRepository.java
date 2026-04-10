@@ -108,42 +108,34 @@ public interface HemodinamicaRepository extends JpaRepository<Hemodinamica, Long
 
     @Query(value = """
             SELECT
-                c.sala_ant,
-                 CASE\s
-                    WHEN c.operacao = 'E' THEN 'Cancelamento'
-                    WHEN c.operacao = 'R' THEN 'Remarcado'
-                       ELSE c.operacao
-                 END AS operacao,
-                c.data_hora_ant,
-                c.paciente,
-                c.conv,
-                c.justif,
-                c.procto,
-                c.crm,
-                p2.nome AS nome_profissional,
-                p.nome AS nome_pro,
-                (SELECT co.nome FROM tbconven co WHERE co.cod = c.conv) AS conven
+            c.sala_ant,
+            CASE
+                WHEN c.operacao = 'E' THEN 'Cancelamento'
+                WHEN c.operacao = 'R' THEN 'Remarcado'
+                ELSE c.operacao
+            END AS operacao,
+            c.data_hora,
+            c.paciente,
+            c.conv,
+            c.justif,
+            c.procto,
+            c.crm,
+            p2.nome AS nome_profissional,
+            MIN(p.nome) AS nome_pro,          -- pega 1 nome sem subquery por linha
+            MIN(co.nome) AS conven            -- idem para convênio
             FROM cchisage c
-            INNER JOIN tbprocto p ON c.procto = p.cod_procedimento
+            INNER JOIN tbprocto p ON p.cod_procedimento = c.procto
+            LEFT JOIN tbconven co ON co.cod = c.conv
             LEFT JOIN tbcbopro cbo ON cbo.cod = c.crm
             LEFT JOIN tbprofis p2 ON p2.id = cbo.id_tbprofis
             WHERE
-                c.operacao = 'E'
-                AND c.sala_ant = 20
-                AND c.data_hora_ant BETWEEN :dataini AND :datafim
+            c.operacao IN ('E','R')
+            AND c.sala_ant = 20
+            AND c.data_hora BETWEEN :dataini AND :datafim
             GROUP BY
-                c.sala_ant,\s
-                c.operacao,\s
-                c.data_hora_ant,\s
-                c.paciente,
-                c.conv,\s
-                c.justif,\s
-                c.procto,\s
-                c.crm,\s
-                p2.nome,
-                p.nome,
-                (SELECT co.nome FROM tbconven co WHERE co.cod = c.conv)
-            ORDER BY c.data_hora_ant, c.sala_ant, c.crm
+            c.sala_ant, c.operacao, c.data_hora, c.paciente,
+            c.conv, c.justif, c.procto, c.crm, p2.nome
+            ORDER BY c.data_hora, c.sala_ant, c.crm
             """, nativeQuery = true)
     List<Object[]> findCancelamentosHemodinamica(@Param("dataini") LocalDateTime dataini, @Param("datafim") LocalDateTime datafim);
 
