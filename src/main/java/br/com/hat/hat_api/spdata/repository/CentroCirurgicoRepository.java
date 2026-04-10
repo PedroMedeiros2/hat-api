@@ -97,6 +97,7 @@ public interface CentroCirurgicoRepository extends JpaRepository<Exame, Long> {
             LEFT JOIN tbprofis p2 ON p2.id = cbo.id_tbprofis
             WHERE
                 c.operacao IN ('E','R')
+                AND c.sala_ant <> 20
                 AND c.data_hora BETWEEN :dataini AND :datafim
             GROUP BY
                 c.sala_ant, c.operacao, c.data_hora, c.paciente,
