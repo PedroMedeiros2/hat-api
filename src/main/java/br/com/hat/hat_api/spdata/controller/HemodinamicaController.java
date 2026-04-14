@@ -29,7 +29,7 @@ public class HemodinamicaController {
     private final HemodinamicaService hemodinamicaService;
     private final UsuarioPermissaoService usuarioPermissaoService;
 
-    private static final String INDICADOR_COD_HEMODINAMICA = "HAT0012";
+    private static final String INDICADOR_COD_HEMODINAMICA = "HAT0015";
 
     private ResponseEntity<Map<String, Object>> acessoNegado(String mensagem) {
         Map<String, Object> body = new HashMap<>();
