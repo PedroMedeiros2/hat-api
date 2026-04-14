@@ -81,7 +81,7 @@ public interface CentroCirurgicoRepository extends JpaRepository<Exame, Long> {
                     WHEN c.operacao = 'R' THEN 'Remarcado'
                     ELSE c.operacao
                 END AS operacao,
-                c.data_hora,
+                c.data_hora_ant,
                 c.paciente,
                 c.conv,
                 c.justif,
@@ -98,11 +98,11 @@ public interface CentroCirurgicoRepository extends JpaRepository<Exame, Long> {
             WHERE
                 c.operacao IN ('E','R')
                 AND c.sala_ant <> 20
-                AND c.data_hora BETWEEN :dataini AND :datafim
+                AND c.data_hora_ant BETWEEN :dataini AND :datafim
             GROUP BY
-                c.sala_ant, c.operacao, c.data_hora, c.paciente,
+                c.sala_ant, c.operacao, c.data_hora_ant, c.paciente,
                 c.conv, c.justif, c.procto, c.crm, p2.nome
-            ORDER BY c.data_hora, c.sala_ant, c.crm
+            ORDER BY c.data_hora_ant, c.sala_ant, c.crm
             """, nativeQuery = true)
     List<Object[]> findCancelamentos(@Param("dataini") LocalDateTime dataini, @Param("datafim") LocalDateTime datafim);
 
