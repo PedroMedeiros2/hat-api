@@ -6,6 +6,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Repository
@@ -171,4 +172,29 @@ public interface LeitoRepository extends JpaRepository<Leito, Long> {
             """, nativeQuery = true)
     List<Object[]> findObitos24h(@Param("dataini") String dataini, @Param("datafim") String datafim);
 
+    @Query(value = """
+            SELECT
+                i.pront,
+                i.reg,
+                i.entrada,
+                r1.nome,
+                p1.nome AS medico_assistencial,
+                p2.nome AS medico_solicitante,
+                i.bloco,
+                c.nome AS convenio,
+                cl.nome AS clinica,
+                ti.nome AS internacao,
+                r1.nasc AS nascimento
+            FROM ricadint i
+            LEFT JOIN tbprofis p1        ON p1.cnpj_cpf = i.medass
+            LEFT JOIN tbprofis p2        ON p2.cnpj_cpf = i.medsol
+            LEFT JOIN ricadpac r1        ON r1.pront = i.pront
+            LEFT JOIN tbconven c         ON c.cod = i.conv
+            LEFT JOIN tbcarateratend ti  ON ti.id = i.carint
+            LEFT JOIN tbclinica cl       ON cl.cod = i.clinica
+            WHERE i.entrada BETWEEN :dataini AND :datafim
+            ORDER BY i.entrada, r1.nome
+            """, nativeQuery = true)
+    List<Object[]> findInternacoesDetalhadas(@Param("dataini") LocalDateTime dataini,
+                                             @Param("datafim") LocalDateTime datafim);
 }
