@@ -87,7 +87,7 @@ public class LeitoService {
         return new InternacaoDetalhadaDTO(
                 r[0]  != null ? ((Number) r[0]).longValue() : null,
                 r[1]  != null ? ((Number) r[1]).longValue() : null,
-                r[2]  != null ? LocalDate.from(((java.sql.Timestamp) r[2]).toLocalDateTime()) : null,
+                r[2]  != null ? ((java.sql.Date) r[2]).toLocalDate() : null,
                 r[3]  != null ? String.valueOf(r[3]).trim() : null,
                 r[4]  != null ? String.valueOf(r[4]).trim() : null,
                 r[5]  != null ? String.valueOf(r[5]).trim() : null,
