@@ -1,5 +1,6 @@
 package br.com.hat.hat_api.spdata.controller;
 
+import br.com.hat.hat_api.spdata.dto.InternacaoDetalhadaDTO;
 import br.com.hat.hat_api.spdata.dto.MovimentacaoDTO;
 import br.com.hat.hat_api.spdata.dto.TaxaOcupacaoDTO;
 import br.com.hat.hat_api.spdata.service.LeitoService;
@@ -106,5 +107,25 @@ public class LeitoController {
 
         List<MovimentacaoDTO> movimentacao = leitoService.getMovimentacao(dataini, datafim);
         return ResponseEntity.ok(movimentacao);
+    }
+
+    @GetMapping("/internacoes")
+    public ResponseEntity<?> getInternacoesDetalhadas(
+            @RequestParam String dataini,
+            @RequestParam String datafim,
+            Authentication authentication
+    ) {
+        String matricula = authentication.getName();
+
+        if (naoTemPermissaoVisualizar(authentication)) {
+            return acessoNegado("Acesso negado. Você não possui a permissão VISUALIZAR.");
+        }
+
+        if (!usuarioPermissaoService.podeVisualizarIndicador(matricula, INDICADOR_COD_MOVIMENTACAO)) {
+            return acessoNegado("Acesso negado ao indicador de internações.");
+        }
+
+        List<InternacaoDetalhadaDTO> internacoes = leitoService.getInternacoesDetalhadas(dataini, datafim);
+        return ResponseEntity.ok(internacoes);
     }
 }
