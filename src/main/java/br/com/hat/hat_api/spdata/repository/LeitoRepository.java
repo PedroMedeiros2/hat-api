@@ -13,61 +13,84 @@ import java.util.List;
 public interface LeitoRepository extends JpaRepository<Leito, Long> {
 
     @Query(value = """
-            WITH ocupacao AS (
-                SELECT 
+            WITH total_leitos AS (
+                SELECT
+                    B.BLOCO,
+                    B.NOME,
+                    B.ORDEM,
+                    COUNT(*) AS total_leitos
+                FROM
+                    RILEITOS L
+                    INNER JOIN RIACOMOD A ON L.ACOMOD = A.ACOMOD
+                    INNER JOIN RIBLOCOS B ON B.BLOCO = A.BLOCO AND B.BLOCO = L.BLOCO
+                WHERE
+                    B.BLOCO IN (:blocos)
+                    AND L.STATUS <> 'I'
+                GROUP BY B.BLOCO, B.NOME, B.ORDEM
+            ),
+            ocupacao AS (
+                SELECT
+                    B.BLOCO,
                     CASE
                         WHEN v.cod = 1 THEN 'SUS'
                         WHEN v.cod = 2 THEN 'Particular'
                         ELSE 'Convenio'
                     END AS convenio,
                     COUNT(*) AS leitos_ocupados
-                FROM 
+                FROM
                     RILEITOS L
                     INNER JOIN RIACOMOD A ON L.ACOMOD = A.ACOMOD
                     INNER JOIN RIBLOCOS B ON B.BLOCO = A.BLOCO AND B.BLOCO = L.BLOCO
                     INNER JOIN RICADINT CI ON CI.REG = L.REG
                     LEFT JOIN tbconven v ON v.cod = CI.CONV
-                WHERE 
+                WHERE
                     B.BLOCO IN (:blocos)
                     AND L.STATUS <> 'I'
                     AND L.REG <> 0
                 GROUP BY
+                    B.BLOCO,
                     CASE
                         WHEN v.cod = 1 THEN 'SUS'
                         WHEN v.cod = 2 THEN 'Particular'
                         ELSE 'Convenio'
                     END
             ),
-            total_leitos AS (
-                SELECT 
-                    COUNT(*) AS total_leitos
-                FROM 
-                    RILEITOS L
-                    INNER JOIN RIACOMOD A ON L.ACOMOD = A.ACOMOD
-                    INNER JOIN RIBLOCOS B ON B.BLOCO = A.BLOCO AND B.BLOCO = L.BLOCO
-                WHERE 
-                    B.BLOCO IN (:blocos)
-                    AND L.STATUS <> 'I'
-            ),
             ocupados_totais AS (
-                SELECT 
+                SELECT
+                    BLOCO,
                     SUM(leitos_ocupados) AS total_ocupados
                 FROM ocupacao
+                GROUP BY BLOCO
             )
-            
-            SELECT 
+
+            SELECT
+                t.BLOCO,
+                t.NOME,
                 o.convenio,
-                o.leitos_ocupados,
+                COALESCE(o.leitos_ocupados, 0) AS leitos_ocupados,
                 t.total_leitos,
-                t.total_leitos - ot.total_ocupados AS leitos_disponiveis
-            FROM 
-                ocupacao o
-                CROSS JOIN total_leitos t
-                CROSS JOIN ocupados_totais ot
-            ORDER BY 
-                o.convenio
+                t.total_leitos - COALESCE(ot.total_ocupados, 0) AS leitos_disponiveis
+            FROM
+                total_leitos t
+                LEFT JOIN ocupacao o ON o.BLOCO = t.BLOCO
+                LEFT JOIN ocupados_totais ot ON ot.BLOCO = t.BLOCO
+            ORDER BY
+                t.ORDEM, t.NOME, o.convenio
             """, nativeQuery = true)
     List<Object[]> getTaxaOcupacaoByBlocos(@Param("blocos") List<String> blocos);
+
+    @Query(value = """
+            SELECT B.BLOCO
+            FROM RIBLOCOS B
+            WHERE EXISTS (
+                SELECT 1
+                FROM RILEITOS L
+                WHERE L.BLOCO = B.BLOCO
+                  AND COALESCE(L.STATUS, '') NOT IN ('I')
+            )
+            ORDER BY B.ORDEM, B.NOME
+            """, nativeQuery = true)
+    List<String> findBlocosAtivos();
 
 
     @Query(value = """

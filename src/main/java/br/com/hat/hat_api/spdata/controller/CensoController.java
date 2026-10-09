@@ -3,6 +3,7 @@ package br.com.hat.hat_api.spdata.controller;
 import br.com.hat.hat_api.permissoes.service.UsuarioPermissaoService;
 import br.com.hat.hat_api.spdata.dto.BlocoDTO;
 import br.com.hat.hat_api.spdata.dto.CensoDTO;
+import br.com.hat.hat_api.spdata.service.BlocoService;
 import br.com.hat.hat_api.spdata.service.CensoService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -26,6 +27,7 @@ import java.util.stream.Collectors;
 public class CensoController {
 
     private final CensoService censoService;
+    private final BlocoService blocoService;
     private final UsuarioPermissaoService usuarioPermissaoService;
 
     private static final String INDICADOR_COD_CENSO = "HAT0010";
@@ -66,10 +68,7 @@ public class CensoController {
             return acessoNegado("Acesso negado ao indicador de censo.");
         }
 
-        List<String> blocos = List.of(
-                "AP100","AP200","AP300","AP400","AP500","AP600",
-                "UTI","PA","PS"
-        );
+        List<String> blocos = blocoService.listarBlocosAtivos();
 
         List<CensoDTO> censo = censoService.listarCensoMultiplosBlocos(
                 dataini,
@@ -85,7 +84,7 @@ public class CensoController {
     public ResponseEntity<?> getCenso(
             @RequestParam String dataini,
             @RequestParam String datafim,
-            @RequestParam String bloco,
+            @RequestParam(required = false) String bloco,
             @RequestParam(required = false, defaultValue = "1") Integer incluirMesmoDia,
             Authentication authentication) {
 
@@ -99,12 +98,19 @@ public class CensoController {
             return acessoNegado("Acesso negado ao indicador.");
         }
 
-        List<CensoDTO> censo = censoService.listarCenso(
-                dataini,
-                datafim,
-                bloco,
-                incluirMesmoDia
-        );
+        List<CensoDTO> censo = (bloco == null || bloco.isBlank())
+                ? censoService.listarCensoMultiplosBlocos(
+                        dataini,
+                        datafim,
+                        blocoService.listarBlocosAtivos(),
+                        incluirMesmoDia
+                )
+                : censoService.listarCenso(
+                        dataini,
+                        datafim,
+                        bloco,
+                        incluirMesmoDia
+                );
 
         return ResponseEntity.ok(censo);
     }

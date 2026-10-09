@@ -26,9 +26,11 @@ public class LeitoService {
         return result.stream()
                 .map(obj -> new TaxaOcupacaoDTO(
                         ((String) obj[0]).trim(),
-                        ((Number) obj[1]).intValue(),
-                        ((Number) obj[2]).intValue(),
-                        ((Number) obj[3]).intValue()
+                        obj[1] != null ? ((String) obj[1]).trim() : null,
+                        obj[2] != null ? ((String) obj[2]).trim() : null,
+                        ((Number) obj[3]).intValue(),
+                        ((Number) obj[4]).intValue(),
+                        ((Number) obj[5]).intValue()
                 ))
                 .toList();
     }

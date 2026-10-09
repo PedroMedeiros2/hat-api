@@ -3,6 +3,7 @@ package br.com.hat.hat_api.spdata.controller;
 import br.com.hat.hat_api.spdata.dto.InternacaoDetalhadaDTO;
 import br.com.hat.hat_api.spdata.dto.MovimentacaoDTO;
 import br.com.hat.hat_api.spdata.dto.TaxaOcupacaoDTO;
+import br.com.hat.hat_api.spdata.service.BlocoService;
 import br.com.hat.hat_api.spdata.service.LeitoService;
 import br.com.hat.hat_api.permissoes.service.UsuarioPermissaoService;
 import lombok.RequiredArgsConstructor;
@@ -24,6 +25,7 @@ import java.util.stream.Collectors;
 public class LeitoController {
 
     private final LeitoService leitoService;
+    private final BlocoService blocoService;
     private final UsuarioPermissaoService usuarioPermissaoService;
 
     private static final String INDICADOR_COD_OCUPACAO_GERAL = "HAT0007";
@@ -53,7 +55,7 @@ public class LeitoController {
 
     @GetMapping("/ocupacao-geral")
     public ResponseEntity<?> getOcupacaoGeralPorBlocos(
-            @RequestParam List<String> blocos,
+            @RequestParam(required = false) List<String> blocos,
             Authentication authentication
     ) {
         String matricula = authentication.getName();
@@ -66,13 +68,13 @@ public class LeitoController {
             return acessoNegado("Acesso negado ao indicador de ocupação geral de leitos.");
         }
 
-        List<TaxaOcupacaoDTO> ocupacao = leitoService.getOcupacaoByBlocos(blocos);
+        List<TaxaOcupacaoDTO> ocupacao = leitoService.getOcupacaoByBlocos(blocoService.resolverBlocos(blocos));
         return ResponseEntity.ok(ocupacao);
     }
 
     @GetMapping("/ocupacao-cnes")
     public ResponseEntity<?> getOcupacaoCnesPorBlocos(
-            @RequestParam List<String> blocos,
+            @RequestParam(required = false) List<String> blocos,
             Authentication authentication
     ) {
         String matricula = authentication.getName();
@@ -85,7 +87,7 @@ public class LeitoController {
             return acessoNegado("Acesso negado ao indicador de ocupação de leitos - CNES.");
         }
 
-        List<TaxaOcupacaoDTO> ocupacao = leitoService.getOcupacaoByBlocos(blocos);
+        List<TaxaOcupacaoDTO> ocupacao = leitoService.getOcupacaoByBlocos(blocoService.resolverBlocos(blocos));
         return ResponseEntity.ok(ocupacao);
     }
 
