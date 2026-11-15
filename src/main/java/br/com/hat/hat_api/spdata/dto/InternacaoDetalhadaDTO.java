@@ -13,5 +13,13 @@ public record InternacaoDetalhadaDTO(
         String convenio,
         String clinica,
         String internacao,
-        LocalDate nascimento
+        LocalDate nascimento,
+        /** código do caráter (TBCARATERATEND) e grupo: Eletiva, Urgência ou Não informado */
+        Integer codigoCarater,
+        String grupoCarater,
+        /** CID principal e procedimento da internação */
+        String cidCodigo,
+        String cidNome,
+        String procedimentoCodigo,
+        String procedimentoNome
 ) { }
