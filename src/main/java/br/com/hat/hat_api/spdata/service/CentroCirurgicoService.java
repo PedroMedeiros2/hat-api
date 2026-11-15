@@ -173,7 +173,7 @@ public class CentroCirurgicoService {
                 r[2] != null ? String.valueOf(r[2]).trim() : null,
                 r[3] != null ? String.valueOf(r[3]).trim() : null,
                 r[4] != null ? String.valueOf(r[4]).trim() : null,
-                r[5] != null ? String.valueOf(r[4]).trim() : null
+                r[5] != null ? String.valueOf(r[5]).trim() : null // situação da agenda (F = faltou)
         );
     }
 }

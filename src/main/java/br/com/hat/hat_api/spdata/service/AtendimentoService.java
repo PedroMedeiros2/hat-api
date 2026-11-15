@@ -2,6 +2,7 @@ package br.com.hat.hat_api.spdata.service;
 
 import br.com.hat.hat_api.spdata.dto.AtendimentoDTO;
 import br.com.hat.hat_api.spdata.repository.AtendimentoRepository;
+import br.com.hat.hat_api.spdata.util.Texto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -54,14 +55,14 @@ public class AtendimentoService {
                 ((Number) r[0]).longValue(),
                 ((Number) r[1]).intValue(),
                 ((Timestamp) r[2]),
-                ((String) r[3]),
-                (String) r[4],
-                (String) r[5],
-                (String) r[6],
-                (String) r[7],
-                (String) r[8],
-                (String) r[9],
-                (String) r[10]
+                Texto.limpo(r[3]),
+                Texto.limpo(r[4]),
+                Texto.limpo(r[5]),
+                Texto.limpo(r[6]),
+                Texto.limpo(r[7]),
+                Texto.limpo(r[8]),
+                Texto.limpo(r[9]),
+                Texto.limpo(r[10])
         );
     }
 }

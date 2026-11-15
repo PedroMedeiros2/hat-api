@@ -3,6 +3,7 @@ package br.com.hat.hat_api.spdata.service;
 import br.com.hat.hat_api.spdata.dto.BlocoDTO;
 import br.com.hat.hat_api.spdata.dto.CensoDTO;
 import br.com.hat.hat_api.spdata.repository.CensoRepository;
+import br.com.hat.hat_api.spdata.util.Texto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -45,13 +46,13 @@ public class CensoService {
 
     private CensoDTO converterParaDTO(Object[] r) {
         return new CensoDTO(
-                (String) r[0],
+                Texto.limpo(r[0]),
                 ((Number) r[1]).longValue(),
                 ((Number) r[2]).longValue(),
-                (String) r[3],
-                (String) r[4],
-                (String) r[5],
-                (String) r[6],
+                Texto.limpo(r[3]),
+                Texto.limpo(r[4]),
+                Texto.limpo(r[5]),
+                Texto.limpo(r[6]),
                 r[7] != null ? ((java.sql.Date) r[7]).toLocalDate() : null
         );
     }
@@ -66,7 +67,7 @@ public class CensoService {
 
     private BlocoDTO converterParaBlocoDTO(Object[] r) {
         return new BlocoDTO(
-                (String) r[0],
+                Texto.limpo(r[0]),
                 ((Number) r[1]).longValue()
         );
     }

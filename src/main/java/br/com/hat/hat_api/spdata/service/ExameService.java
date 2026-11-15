@@ -2,6 +2,7 @@ package br.com.hat.hat_api.spdata.service;
 
 import br.com.hat.hat_api.spdata.dto.ExameDTO;
 import br.com.hat.hat_api.spdata.repository.ExameRepository;
+import br.com.hat.hat_api.spdata.util.Texto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -35,11 +36,11 @@ public class ExameService {
         return new ExameDTO(
                 ((Number) obj[0]).longValue(),
                 (Date) obj[1],
-                (String) obj[2],
-                (String) obj[3],
-                (String) obj[4],
-                (String) obj[5],
-                (String) obj[6]
+                Texto.limpo(obj[2]),
+                Texto.limpo(obj[3]),
+                Texto.limpo(obj[4]),
+                Texto.limpo(obj[5]),
+                Texto.limpo(obj[6])
         );
     }
 }
