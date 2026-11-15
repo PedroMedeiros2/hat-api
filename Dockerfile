@@ -1,32 +1,16 @@
-# Estágio 1: Build (Construção)
-# Use a imagem do Maven com o JDK 17. Altere '17' se usar outra versão do Java.
-FROM maven:3.8.5-openjdk-17 AS builder
-
-# Define o diretório de trabalho
+# syntax=docker/dockerfile:1
+# HAT API (indicadores, só leitura do SPData). Nenhuma credencial na imagem: variáveis chegam no docker compose.
+FROM maven:3.9-eclipse-temurin-17 AS build
 WORKDIR /app
-
-# Copia o pom.xml e baixa as dependências (para aproveitar o cache do Docker)
 COPY pom.xml .
-RUN mvn dependency:go-offline
-
-# Copia o restante do código-fonte e constrói o projeto
+RUN mvn -q dependency:go-offline
 COPY src ./src
-RUN mvn package -DskipTests
+RUN mvn -q package -DskipTests
 
-# Estágio 2: Run (Execução)
-# Use uma imagem JRE leve (slim) para rodar a aplicação
-FROM amazoncorretto:17-alpine
-
+FROM eclipse-temurin:17-jre-alpine
 WORKDIR /app
-
-# --- IMPORTANTE ---
-# Altere 'target/meu-app-0.0.1-SNAPSHOT.jar' para o nome e caminho exato
-# do arquivo .jar que o seu build do Maven gera!
-COPY --from=builder /app/target/hat-api-0.0.1-SNAPSHOT.jar app.jar
-
-# Expõe a porta 8080 (que o Spring usa por padrão)
-EXPOSE 8080
-
-# Comando para iniciar a aplicação
-ENTRYPOINT ["java", "-jar", "app.jar"]
-
+RUN addgroup -S app && adduser -S app -G app
+COPY --from=build /app/target/hat-api-0.0.1-SNAPSHOT.jar app.jar
+USER app
+EXPOSE 8085
+ENTRYPOINT ["sh", "-c", "exec java $JAVA_OPTS -jar app.jar"]

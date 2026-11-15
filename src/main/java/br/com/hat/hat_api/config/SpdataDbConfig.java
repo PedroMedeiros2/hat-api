@@ -6,6 +6,7 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.jdbc.DataSourceBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Primary;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
@@ -24,12 +25,14 @@ import java.util.Map;
         transactionManagerRef = "spdataTransactionManager"
 )
 public class SpdataDbConfig {
+    @Primary
     @Bean(name = "spdataDataSource")
     @ConfigurationProperties(prefix = "spring.datasource.spdata")
     public DataSource spdataDataSource() {
         return DataSourceBuilder.create().build();
     }
 
+    @Primary
     @Bean(name = "spdataEntityManagerFactory")
     public LocalContainerEntityManagerFactoryBean spdataEntityManagerFactory(
             EntityManagerFactoryBuilder builder,
@@ -48,6 +51,7 @@ public class SpdataDbConfig {
                 .build();
     }
 
+    @Primary
     @Bean(name = "spdataTransactionManager")
     public PlatformTransactionManager spdataTransactionManager(
             @Qualifier("spdataEntityManagerFactory") LocalContainerEntityManagerFactoryBean entityManagerFactory) {

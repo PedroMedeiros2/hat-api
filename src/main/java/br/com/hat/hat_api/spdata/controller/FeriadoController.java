@@ -15,7 +15,6 @@ import java.util.Map;
 @RequestMapping("/api/feriados")
 @RequiredArgsConstructor
 public class FeriadoController {
-
     private final FeriadoService service;
 
     @GetMapping("/ano/{ano}")
