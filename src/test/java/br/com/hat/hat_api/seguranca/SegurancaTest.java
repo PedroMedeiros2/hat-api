@@ -76,6 +76,6 @@ class SegurancaTest {
     @Test
     void todaPermissaoEDaAplicacaoIndicadores() {
         assertThat(Permissoes.REGRAS).allSatisfy(r ->
-                assertThat(r.permissao() == null || r.permissao().matches("indicadores:[a-z-]+:ver")).isTrue());
+                assertThat(r.permissao() == null || r.permissao().matches("indicadores:[a-z-]+:(ver|editar)")).isTrue());
     }
 }

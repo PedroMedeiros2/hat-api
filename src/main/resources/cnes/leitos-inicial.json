@@ -1,0 +1,2072 @@
+[
+{
+"bloco": "AP100",
+"ordem": 1,
+"quarto": "Q:100",
+"leito": "L:1",
+"perfil": "CONV/PART",
+"especialidade": "SAÚDE MENTAL",
+"observacao": null
+},
+{
+"bloco": "AP100",
+"ordem": 2,
+"quarto": "Q:100",
+"leito": "L:2",
+"perfil": "CONV/PART",
+"especialidade": "SAÚDE MENTAL",
+"observacao": null
+},
+{
+"bloco": "AP100",
+"ordem": 3,
+"quarto": "Q:100",
+"leito": "L:3",
+"perfil": "CONV/PART",
+"especialidade": "SAÚDE MENTAL",
+"observacao": null
+},
+{
+"bloco": "AP100",
+"ordem": 4,
+"quarto": "Q:101",
+"leito": "L:1",
+"perfil": "CONV/PART",
+"especialidade": "SAÚDE MENTAL",
+"observacao": null
+},
+{
+"bloco": "AP100",
+"ordem": 5,
+"quarto": "Q:101",
+"leito": "L:2",
+"perfil": "CONV/PART",
+"especialidade": "SAÚDE MENTAL",
+"observacao": null
+},
+{
+"bloco": "AP100",
+"ordem": 6,
+"quarto": "Q:102",
+"leito": "L:1",
+"perfil": "CONV/PART",
+"especialidade": "SAÚDE MENTAL",
+"observacao": null
+},
+{
+"bloco": "AP100",
+"ordem": 7,
+"quarto": "Q:103",
+"leito": "L:1",
+"perfil": "SUS",
+"especialidade": "SAÚDE MENTAL",
+"observacao": null
+},
+{
+"bloco": "AP100",
+"ordem": 8,
+"quarto": "Q:103",
+"leito": "L:2",
+"perfil": "SUS",
+"especialidade": "SAÚDE MENTAL",
+"observacao": null
+},
+{
+"bloco": "AP100",
+"ordem": 9,
+"quarto": "Q:103",
+"leito": "L:3",
+"perfil": "SUS",
+"especialidade": "SAÚDE MENTAL",
+"observacao": null
+},
+{
+"bloco": "AP100",
+"ordem": 10,
+"quarto": "Q:103",
+"leito": "L:4",
+"perfil": "SUS",
+"especialidade": "SAÚDE MENTAL",
+"observacao": null
+},
+{
+"bloco": "AP100",
+"ordem": 11,
+"quarto": "Q:104",
+"leito": "L:1",
+"perfil": "SUS",
+"especialidade": "SAÚDE MENTAL",
+"observacao": null
+},
+{
+"bloco": "AP100",
+"ordem": 12,
+"quarto": "Q:104",
+"leito": "L:2",
+"perfil": "SUS",
+"especialidade": "SAÚDE MENTAL",
+"observacao": null
+},
+{
+"bloco": "AP100",
+"ordem": 13,
+"quarto": "Q:104",
+"leito": "L:3",
+"perfil": "SUS",
+"especialidade": "SAÚDE MENTAL",
+"observacao": null
+},
+{
+"bloco": "AP100",
+"ordem": 14,
+"quarto": "Q:104",
+"leito": "L:4",
+"perfil": "SUS",
+"especialidade": "SAÚDE MENTAL",
+"observacao": null
+},
+{
+"bloco": "AP100",
+"ordem": 15,
+"quarto": "Q:104",
+"leito": "L:5",
+"perfil": "SUS",
+"especialidade": "SAÚDE MENTAL",
+"observacao": null
+},
+{
+"bloco": "AP100",
+"ordem": 16,
+"quarto": "Q:104",
+"leito": "L:6",
+"perfil": "SUS",
+"especialidade": "SAÚDE MENTAL",
+"observacao": null
+},
+{
+"bloco": "AP200",
+"ordem": 1,
+"quarto": "Q:200",
+"leito": "L:1",
+"perfil": "SUS",
+"especialidade": "CIRURGIA GERAL",
+"observacao": null
+},
+{
+"bloco": "AP200",
+"ordem": 2,
+"quarto": "Q:200",
+"leito": "L:2",
+"perfil": "SUS",
+"especialidade": "CIRURGIA GERAL",
+"observacao": null
+},
+{
+"bloco": "AP200",
+"ordem": 3,
+"quarto": "Q:200",
+"leito": "L:3",
+"perfil": "SUS",
+"especialidade": "CIRURGIA GERAL",
+"observacao": null
+},
+{
+"bloco": "AP200",
+"ordem": 4,
+"quarto": "Q:200",
+"leito": "L:4",
+"perfil": "SUS",
+"especialidade": "CIRURGIA GERAL",
+"observacao": null
+},
+{
+"bloco": "AP200",
+"ordem": 5,
+"quarto": "Q:200",
+"leito": "L:5",
+"perfil": "SUS",
+"especialidade": "CIRURGIA GERAL",
+"observacao": null
+},
+{
+"bloco": "AP200",
+"ordem": 6,
+"quarto": "Q:201",
+"leito": "L:1",
+"perfil": "SUS",
+"especialidade": "CLÍNICA GERAL",
+"observacao": "Conversão: NEURO CIRÚRGICO"
+},
+{
+"bloco": "AP200",
+"ordem": 7,
+"quarto": "Q:201",
+"leito": "L:2",
+"perfil": "SUS",
+"especialidade": "CLÍNICA GERAL",
+"observacao": "Conversão: NEURO CIRÚRGICO"
+},
+{
+"bloco": "AP200",
+"ordem": 8,
+"quarto": "Q:201",
+"leito": "L:3",
+"perfil": "SUS",
+"especialidade": "CLÍNICA GERAL",
+"observacao": "Conversão: NEURO CIRÚRGICO"
+},
+{
+"bloco": "AP200",
+"ordem": 9,
+"quarto": "Q:201",
+"leito": "L:4",
+"perfil": "SUS",
+"especialidade": "CLÍNICA GERAL",
+"observacao": "Conversão: NEURO CIRÚRGICO"
+},
+{
+"bloco": "AP200",
+"ordem": 10,
+"quarto": "Q:201",
+"leito": "L:5",
+"perfil": "SUS",
+"especialidade": "CLÍNICA GERAL",
+"observacao": "Conversão: NEFRO/URO CIRÚRGICO"
+},
+{
+"bloco": "AP200",
+"ordem": 11,
+"quarto": "Q:202",
+"leito": "L:1",
+"perfil": "SUS",
+"especialidade": "NEFRO/URO CIRÚRGICO",
+"observacao": null
+},
+{
+"bloco": "AP200",
+"ordem": 12,
+"quarto": "Q:202",
+"leito": "L:2",
+"perfil": "SUS",
+"especialidade": "ORTOPEDIA",
+"observacao": null
+},
+{
+"bloco": "AP200",
+"ordem": 13,
+"quarto": "Q:202",
+"leito": "L:3",
+"perfil": "SUS",
+"especialidade": "ORTOPEDIA",
+"observacao": null
+},
+{
+"bloco": "AP200",
+"ordem": 14,
+"quarto": "Q:202",
+"leito": "L:4",
+"perfil": "SUS",
+"especialidade": "ORTOPEDIA",
+"observacao": null
+},
+{
+"bloco": "AP200",
+"ordem": 15,
+"quarto": "Q:203",
+"leito": "L:1",
+"perfil": "SUS",
+"especialidade": "ORTOPEDIA",
+"observacao": null
+},
+{
+"bloco": "AP200",
+"ordem": 16,
+"quarto": "Q:203",
+"leito": "L:2",
+"perfil": "SUS",
+"especialidade": "ORTOPEDIA",
+"observacao": null
+},
+{
+"bloco": "AP200",
+"ordem": 17,
+"quarto": "Q:203",
+"leito": "L:3",
+"perfil": "SUS",
+"especialidade": "ORTOPEDIA",
+"observacao": null
+},
+{
+"bloco": "AP200",
+"ordem": 18,
+"quarto": "Q:203",
+"leito": "L:4",
+"perfil": "SUS",
+"especialidade": "ORTOPEDIA",
+"observacao": null
+},
+{
+"bloco": "AP200",
+"ordem": 19,
+"quarto": "Q:203",
+"leito": "L:5",
+"perfil": "SUS",
+"especialidade": "ORTOPEDIA",
+"observacao": null
+},
+{
+"bloco": "AP300",
+"ordem": 1,
+"quarto": "Q:300",
+"leito": "L:1",
+"perfil": "CONV/PART",
+"especialidade": "GINECOLOGIA",
+"observacao": null
+},
+{
+"bloco": "AP300",
+"ordem": 2,
+"quarto": "Q:301",
+"leito": "L:1",
+"perfil": "CONV/PART",
+"especialidade": "OTORRINO",
+"observacao": null
+},
+{
+"bloco": "AP300",
+"ordem": 3,
+"quarto": "Q:302",
+"leito": "L:1",
+"perfil": "CONV/PART",
+"especialidade": "ORTOPEDIA",
+"observacao": null
+},
+{
+"bloco": "AP300",
+"ordem": 4,
+"quarto": "Q:303",
+"leito": "L:1",
+"perfil": "CONV/PART",
+"especialidade": "CARDIO CIRÚRGICO",
+"observacao": null
+},
+{
+"bloco": "AP300",
+"ordem": 5,
+"quarto": "Q:304",
+"leito": "L:1",
+"perfil": "CONV/PART",
+"especialidade": "CARDIO CIRÚRGICO",
+"observacao": null
+},
+{
+"bloco": "AP300",
+"ordem": 6,
+"quarto": "Q:305",
+"leito": "L:1",
+"perfil": "CONV/PART",
+"especialidade": "CARDIO CIRÚRGICO",
+"observacao": null
+},
+{
+"bloco": "AP300",
+"ordem": 7,
+"quarto": "Q:305",
+"leito": "L:2",
+"perfil": "CONV/PART",
+"especialidade": "CARDIO CIRÚRGICO",
+"observacao": null
+},
+{
+"bloco": "AP300",
+"ordem": 8,
+"quarto": "Q:306",
+"leito": "L:1",
+"perfil": "CONV/PART",
+"especialidade": "PLÁSTICA",
+"observacao": null
+},
+{
+"bloco": "AP300",
+"ordem": 9,
+"quarto": "Q:307",
+"leito": "L:1",
+"perfil": "CONV/PART",
+"especialidade": "PLÁSTICA",
+"observacao": null
+},
+{
+"bloco": "AP300",
+"ordem": 10,
+"quarto": "Q:308",
+"leito": "L:1",
+"perfil": "CONV/PART",
+"especialidade": "NEURO CIRÚRGICO",
+"observacao": null
+},
+{
+"bloco": "AP300",
+"ordem": 11,
+"quarto": "Q:308",
+"leito": "L:2",
+"perfil": "CONV/PART",
+"especialidade": "NEURO CIRÚRGICO",
+"observacao": null
+},
+{
+"bloco": "AP300",
+"ordem": 12,
+"quarto": "Q:309",
+"leito": "L:1",
+"perfil": "CONV/PART",
+"especialidade": "NEURO CIRÚRGICO",
+"observacao": null
+},
+{
+"bloco": "AP300",
+"ordem": 13,
+"quarto": "Q:309",
+"leito": "L:2",
+"perfil": "CONV/PART",
+"especialidade": "NEURO CIRÚRGICO",
+"observacao": null
+},
+{
+"bloco": "AP300",
+"ordem": 14,
+"quarto": "Q:310",
+"leito": "L:1",
+"perfil": "CONV/PART",
+"especialidade": "NEURO CIRÚRGICO",
+"observacao": null
+},
+{
+"bloco": "AP300",
+"ordem": 15,
+"quarto": "Q:311",
+"leito": "L:1",
+"perfil": "CONV/PART",
+"especialidade": "NEURO CIRÚRGICO",
+"observacao": null
+},
+{
+"bloco": "AP300",
+"ordem": 16,
+"quarto": "Q:312",
+"leito": "L:1",
+"perfil": "CONV/PART",
+"especialidade": "NEFRO/URO CLÍNICO",
+"observacao": null
+},
+{
+"bloco": "AP300",
+"ordem": 17,
+"quarto": "Q:313",
+"leito": "L:1",
+"perfil": "CONV/PART",
+"especialidade": "NEURO CLÍNICO",
+"observacao": null
+},
+{
+"bloco": "AP300",
+"ordem": 18,
+"quarto": "Q:314",
+"leito": "L:1",
+"perfil": "CONV/PART",
+"especialidade": "CLÍNICA GERAL",
+"observacao": null
+},
+{
+"bloco": "AP300",
+"ordem": 19,
+"quarto": "Q:315",
+"leito": "L:1",
+"perfil": "CONV/PART",
+"especialidade": "CLÍNICA GERAL",
+"observacao": null
+},
+{
+"bloco": "AP300",
+"ordem": 20,
+"quarto": "Q:316",
+"leito": "L:1",
+"perfil": "CONV/PART",
+"especialidade": "CLÍNICA GERAL",
+"observacao": null
+},
+{
+"bloco": "AP300",
+"ordem": 21,
+"quarto": "Q:317",
+"leito": "L:1",
+"perfil": "CONV/PART",
+"especialidade": "CLÍNICA GERAL",
+"observacao": null
+},
+{
+"bloco": "AP300",
+"ordem": 22,
+"quarto": "Q:318",
+"leito": "L:1",
+"perfil": "CONV/PART",
+"especialidade": "CLÍNICA GERAL",
+"observacao": null
+},
+{
+"bloco": "AP300",
+"ordem": 23,
+"quarto": "Q:319",
+"leito": "L:1",
+"perfil": "CONV/PART",
+"especialidade": "CLÍNICA GERAL",
+"observacao": null
+},
+{
+"bloco": "AP300",
+"ordem": 24,
+"quarto": "Q:320",
+"leito": "L:1",
+"perfil": "CONV/PART",
+"especialidade": "CLÍNICA GERAL",
+"observacao": null
+},
+{
+"bloco": "AP300",
+"ordem": 25,
+"quarto": "Q:321",
+"leito": "L:1",
+"perfil": "CONV/PART",
+"especialidade": "CLÍNICA GERAL",
+"observacao": null
+},
+{
+"bloco": "AP300",
+"ordem": 26,
+"quarto": "Q:322",
+"leito": "L:1",
+"perfil": "CONV/PART",
+"especialidade": "CLÍNICA GERAL",
+"observacao": null
+},
+{
+"bloco": "AP400",
+"ordem": 1,
+"quarto": "Q:400",
+"leito": "L:1",
+"perfil": "CONV/PART",
+"especialidade": "CIRURGIA GERAL",
+"observacao": null
+},
+{
+"bloco": "AP400",
+"ordem": 2,
+"quarto": "Q:400",
+"leito": "L:2",
+"perfil": "CONV/PART",
+"especialidade": "CIRURGIA GERAL",
+"observacao": null
+},
+{
+"bloco": "AP400",
+"ordem": 3,
+"quarto": "Q:401",
+"leito": "L:1",
+"perfil": "CONV/PART",
+"especialidade": "CIRURGIA GERAL",
+"observacao": null
+},
+{
+"bloco": "AP400",
+"ordem": 4,
+"quarto": "Q:401",
+"leito": "L:2",
+"perfil": "CONV/PART",
+"especialidade": "ORTOPEDIA",
+"observacao": null
+},
+{
+"bloco": "AP400",
+"ordem": 5,
+"quarto": "Q:402",
+"leito": "L:1",
+"perfil": "CONV/PART",
+"especialidade": "ORTOPEDIA",
+"observacao": null
+},
+{
+"bloco": "AP400",
+"ordem": 6,
+"quarto": "Q:402",
+"leito": "L:2",
+"perfil": "CONV/PART",
+"especialidade": "ORTOPEDIA",
+"observacao": null
+},
+{
+"bloco": "AP400",
+"ordem": 7,
+"quarto": "Q:403",
+"leito": "L:1",
+"perfil": "CONV/PART",
+"especialidade": "ORTOPEDIA",
+"observacao": null
+},
+{
+"bloco": "AP400",
+"ordem": 8,
+"quarto": "Q:403",
+"leito": "L:2",
+"perfil": "CONV/PART",
+"especialidade": "ORTOPEDIA",
+"observacao": null
+},
+{
+"bloco": "AP400",
+"ordem": 9,
+"quarto": "Q:404",
+"leito": "L:1",
+"perfil": "CONV/PART",
+"especialidade": "ORTOPEDIA",
+"observacao": null
+},
+{
+"bloco": "AP400",
+"ordem": 10,
+"quarto": "Q:404",
+"leito": "L:2",
+"perfil": "CONV/PART",
+"especialidade": "CARDIO CLÍNICO",
+"observacao": null
+},
+{
+"bloco": "AP400",
+"ordem": 11,
+"quarto": "Q:405",
+"leito": "L:1",
+"perfil": "CONV/PART",
+"especialidade": "OFTALMOLOGIA",
+"observacao": null
+},
+{
+"bloco": "AP400",
+"ordem": 12,
+"quarto": "Q:405",
+"leito": "L:2",
+"perfil": "CONV/PART",
+"especialidade": "GASTROENTEROLOGIA",
+"observacao": null
+},
+{
+"bloco": "AP400",
+"ordem": 13,
+"quarto": "Q:406",
+"leito": "L:1",
+"perfil": "CONV/PART",
+"especialidade": "CARDIO CIRÚRGICO",
+"observacao": null
+},
+{
+"bloco": "AP400",
+"ordem": 14,
+"quarto": "Q:406",
+"leito": "L:2",
+"perfil": "CONV/PART",
+"especialidade": "NEURO CIRÚRGICO",
+"observacao": null
+},
+{
+"bloco": "AP400",
+"ordem": 15,
+"quarto": "Q:407",
+"leito": "L:1",
+"perfil": "CONV/PART",
+"especialidade": "NEFRO/URO CIRÚRGICO",
+"observacao": null
+},
+{
+"bloco": "AP400",
+"ordem": 16,
+"quarto": "Q:407",
+"leito": "L:2",
+"perfil": "CONV/PART",
+"especialidade": "NEFRO/URO CLÍNICO",
+"observacao": null
+},
+{
+"bloco": "AP400",
+"ordem": 17,
+"quarto": "Q:409",
+"leito": "L:1",
+"perfil": "CONV/PART",
+"especialidade": "CARDIO CLÍNICO",
+"observacao": null
+},
+{
+"bloco": "AP400",
+"ordem": 18,
+"quarto": "Q:409",
+"leito": "L:2",
+"perfil": "CONV/PART",
+"especialidade": "CARDIO CLÍNICO",
+"observacao": null
+},
+{
+"bloco": "AP400",
+"ordem": 19,
+"quarto": "Q:411",
+"leito": "L:1",
+"perfil": "CONV/PART",
+"especialidade": "CLÍNICA GERAL",
+"observacao": null
+},
+{
+"bloco": "AP400",
+"ordem": 20,
+"quarto": "Q:411",
+"leito": "L:2",
+"perfil": "CONV/PART",
+"especialidade": "CLÍNICA GERAL",
+"observacao": null
+},
+{
+"bloco": "AP400",
+"ordem": 21,
+"quarto": "Q:412",
+"leito": "L:1",
+"perfil": "CONV/PART",
+"especialidade": "PEDIATRIA",
+"observacao": null
+},
+{
+"bloco": "AP400",
+"ordem": 22,
+"quarto": "Q:412",
+"leito": "L:2",
+"perfil": "CONV/PART",
+"especialidade": "OTORRINO",
+"observacao": null
+},
+{
+"bloco": "AP500",
+"ordem": 1,
+"quarto": "Q:501",
+"leito": "L:1",
+"perfil": "SUS",
+"especialidade": "CLÍNICA GERAL",
+"observacao": null
+},
+{
+"bloco": "AP500",
+"ordem": 2,
+"quarto": "Q:501",
+"leito": "L:2",
+"perfil": "SUS",
+"especialidade": "CLÍNICA GERAL",
+"observacao": null
+},
+{
+"bloco": "AP500",
+"ordem": 3,
+"quarto": "Q:501",
+"leito": "L:3",
+"perfil": "SUS",
+"especialidade": "CLÍNICA GERAL",
+"observacao": null
+},
+{
+"bloco": "AP500",
+"ordem": 4,
+"quarto": "Q:501",
+"leito": "L:4",
+"perfil": "SUS",
+"especialidade": "CLÍNICA GERAL",
+"observacao": null
+},
+{
+"bloco": "AP500",
+"ordem": 5,
+"quarto": "Q:501",
+"leito": "L:5",
+"perfil": "SUS",
+"especialidade": "CLÍNICA GERAL",
+"observacao": null
+},
+{
+"bloco": "AP500",
+"ordem": 6,
+"quarto": "Q:502",
+"leito": "L:1",
+"perfil": "SUS",
+"especialidade": "CLÍNICA GERAL",
+"observacao": null
+},
+{
+"bloco": "AP500",
+"ordem": 7,
+"quarto": "Q:502",
+"leito": "L:2",
+"perfil": "SUS",
+"especialidade": "CLÍNICA GERAL",
+"observacao": null
+},
+{
+"bloco": "AP500",
+"ordem": 8,
+"quarto": "Q:502",
+"leito": "L:3",
+"perfil": "SUS",
+"especialidade": "CLÍNICA GERAL",
+"observacao": null
+},
+{
+"bloco": "AP500",
+"ordem": 9,
+"quarto": "Q:502",
+"leito": "L:4",
+"perfil": "SUS",
+"especialidade": "CLÍNICA GERAL",
+"observacao": null
+},
+{
+"bloco": "AP500",
+"ordem": 10,
+"quarto": "Q:502",
+"leito": "L:5",
+"perfil": "SUS",
+"especialidade": "CLÍNICA GERAL",
+"observacao": "*"
+},
+{
+"bloco": "AP500",
+"ordem": 11,
+"quarto": "Q:503",
+"leito": "L:1",
+"perfil": "SUS",
+"especialidade": "CLÍNICA GERAL",
+"observacao": null
+},
+{
+"bloco": "AP500",
+"ordem": 12,
+"quarto": "Q:503",
+"leito": "L:2",
+"perfil": "SUS",
+"especialidade": "CLÍNICA GERAL",
+"observacao": null
+},
+{
+"bloco": "AP500",
+"ordem": 13,
+"quarto": "Q:503",
+"leito": "L:3",
+"perfil": "SUS",
+"especialidade": "CLÍNICA GERAL",
+"observacao": null
+},
+{
+"bloco": "AP500",
+"ordem": 14,
+"quarto": "Q:503",
+"leito": "L:4",
+"perfil": "SUS",
+"especialidade": "CLÍNICA GERAL",
+"observacao": null
+},
+{
+"bloco": "AP500",
+"ordem": 15,
+"quarto": "Q:503",
+"leito": "L:5",
+"perfil": "SUS",
+"especialidade": "CLÍNICA GERAL",
+"observacao": null
+},
+{
+"bloco": "AP500",
+"ordem": 16,
+"quarto": "Q:504",
+"leito": "L:1",
+"perfil": "SUS",
+"especialidade": "CLÍNICA GERAL",
+"observacao": null
+},
+{
+"bloco": "AP500",
+"ordem": 17,
+"quarto": "Q:504",
+"leito": "L:2",
+"perfil": "SUS",
+"especialidade": "CLÍNICA GERAL",
+"observacao": null
+},
+{
+"bloco": "AP500",
+"ordem": 18,
+"quarto": "Q:504",
+"leito": "L:3",
+"perfil": "SUS",
+"especialidade": "CLÍNICA GERAL",
+"observacao": null
+},
+{
+"bloco": "AP500",
+"ordem": 19,
+"quarto": "Q:504",
+"leito": "L:4",
+"perfil": "SUS",
+"especialidade": "CLÍNICA GERAL",
+"observacao": null
+},
+{
+"bloco": "AP500",
+"ordem": 20,
+"quarto": "Q:504",
+"leito": "L:5",
+"perfil": "SUS",
+"especialidade": "CLÍNICA GERAL",
+"observacao": null
+},
+{
+"bloco": "AP500",
+"ordem": 21,
+"quarto": "Q:504",
+"leito": "L:6",
+"perfil": "SUS",
+"especialidade": "CLÍNICA GERAL",
+"observacao": "*"
+},
+{
+"bloco": "AP500",
+"ordem": 22,
+"quarto": "Q:505",
+"leito": "L:1",
+"perfil": "SUS",
+"especialidade": "CLÍNICA GERAL",
+"observacao": null
+},
+{
+"bloco": "AP500",
+"ordem": 23,
+"quarto": "Q:505",
+"leito": "L:2",
+"perfil": "SUS",
+"especialidade": "CLÍNICA GERAL",
+"observacao": null
+},
+{
+"bloco": "AP500",
+"ordem": 24,
+"quarto": "Q:505",
+"leito": "L:3",
+"perfil": "SUS",
+"especialidade": "CLÍNICA GERAL",
+"observacao": "*"
+},
+{
+"bloco": "AP600",
+"ordem": 1,
+"quarto": "Q:600",
+"leito": "L:1",
+"perfil": "SUS",
+"especialidade": "CIRURGIA GERAL",
+"observacao": null
+},
+{
+"bloco": "AP600",
+"ordem": 2,
+"quarto": "Q:600",
+"leito": "L:2",
+"perfil": "SUS",
+"especialidade": "CIRURGIA GERAL",
+"observacao": null
+},
+{
+"bloco": "AP600",
+"ordem": 3,
+"quarto": "Q:600",
+"leito": "L:3",
+"perfil": "SUS",
+"especialidade": "CARDIO CIRÚRGICO",
+"observacao": null
+},
+{
+"bloco": "AP600",
+"ordem": 4,
+"quarto": "Q:601",
+"leito": "L:1",
+"perfil": "SUS",
+"especialidade": "CARDIO CIRÚRGICO",
+"observacao": null
+},
+{
+"bloco": "AP600",
+"ordem": 5,
+"quarto": "Q:601",
+"leito": "L:2",
+"perfil": "SUS",
+"especialidade": "CARDIO CIRÚRGICO",
+"observacao": null
+},
+{
+"bloco": "AP600",
+"ordem": 6,
+"quarto": "Q:601",
+"leito": "L:3",
+"perfil": "SUS",
+"especialidade": "CARDIO CIRÚRGICO",
+"observacao": null
+},
+{
+"bloco": "AP600",
+"ordem": 7,
+"quarto": "Q:602",
+"leito": "L:1",
+"perfil": "SUS",
+"especialidade": "CARDIO CIRÚRGICO",
+"observacao": null
+},
+{
+"bloco": "AP600",
+"ordem": 8,
+"quarto": "Q:602",
+"leito": "L:2",
+"perfil": "SUS",
+"especialidade": "CARDIO CIRÚRGICO",
+"observacao": null
+},
+{
+"bloco": "AP600",
+"ordem": 9,
+"quarto": "Q:602",
+"leito": "L:3",
+"perfil": "SUS",
+"especialidade": "CARDIO CIRÚRGICO",
+"observacao": null
+},
+{
+"bloco": "AP600",
+"ordem": 10,
+"quarto": "Q:603",
+"leito": "L:1",
+"perfil": "SUS",
+"especialidade": "CARDIO CIRÚRGICO",
+"observacao": null
+},
+{
+"bloco": "AP600",
+"ordem": 11,
+"quarto": "Q:603",
+"leito": "L:2",
+"perfil": "SUS",
+"especialidade": "CARDIO CIRÚRGICO",
+"observacao": null
+},
+{
+"bloco": "AP600",
+"ordem": 12,
+"quarto": "Q:603",
+"leito": "L:3",
+"perfil": "SUS",
+"especialidade": "CARDIO CIRÚRGICO",
+"observacao": null
+},
+{
+"bloco": "AP600",
+"ordem": 13,
+"quarto": "Q:604",
+"leito": "L:1",
+"perfil": "SUS",
+"especialidade": "CARDIO CIRÚRGICO",
+"observacao": null
+},
+{
+"bloco": "AP600",
+"ordem": 14,
+"quarto": "Q:604",
+"leito": "L:2",
+"perfil": "SUS",
+"especialidade": "CARDIO CLÍNICO",
+"observacao": null
+},
+{
+"bloco": "AP600",
+"ordem": 15,
+"quarto": "Q:604",
+"leito": "L:3",
+"perfil": "SUS",
+"especialidade": "CARDIO CLÍNICO",
+"observacao": null
+},
+{
+"bloco": "AP600",
+"ordem": 16,
+"quarto": "Q:605",
+"leito": "L:1",
+"perfil": "SUS",
+"especialidade": "CARDIO CLÍNICO",
+"observacao": null
+},
+{
+"bloco": "AP600",
+"ordem": 17,
+"quarto": "Q:605",
+"leito": "L:2",
+"perfil": "SUS",
+"especialidade": "CARDIO CLÍNICO",
+"observacao": null
+},
+{
+"bloco": "AP600",
+"ordem": 18,
+"quarto": "Q:605",
+"leito": "L:3",
+"perfil": "SUS",
+"especialidade": "CARDIO CLÍNICO",
+"observacao": null
+},
+{
+"bloco": "AP600",
+"ordem": 19,
+"quarto": "Q:606",
+"leito": "L:1",
+"perfil": "SUS",
+"especialidade": "CARDIO CLÍNICO",
+"observacao": null
+},
+{
+"bloco": "AP600",
+"ordem": 20,
+"quarto": "Q:606",
+"leito": "L:2",
+"perfil": "SUS",
+"especialidade": "CARDIO CLÍNICO",
+"observacao": null
+},
+{
+"bloco": "AP600",
+"ordem": 21,
+"quarto": "Q:606",
+"leito": "L:3",
+"perfil": "SUS",
+"especialidade": "CARDIO CLÍNICO",
+"observacao": null
+},
+{
+"bloco": "AP600",
+"ordem": 22,
+"quarto": "Q:607",
+"leito": "L:1",
+"perfil": "SUS",
+"especialidade": "CARDIO CLÍNICO",
+"observacao": null
+},
+{
+"bloco": "AP600",
+"ordem": 23,
+"quarto": "Q:607",
+"leito": "L:2",
+"perfil": "SUS",
+"especialidade": "CARDIO CLÍNICO",
+"observacao": null
+},
+{
+"bloco": "AP600",
+"ordem": 24,
+"quarto": "Q:607",
+"leito": "L:3",
+"perfil": "SUS",
+"especialidade": "CARDIO CLÍNICO",
+"observacao": null
+},
+{
+"bloco": "AP600",
+"ordem": 25,
+"quarto": "Q:608",
+"leito": "L:1",
+"perfil": "SUS",
+"especialidade": "CARDIO CLÍNICO",
+"observacao": null
+},
+{
+"bloco": "AP600",
+"ordem": 26,
+"quarto": "Q:608",
+"leito": "L:2",
+"perfil": "SUS",
+"especialidade": "CARDIO CLÍNICO",
+"observacao": null
+},
+{
+"bloco": "AP600",
+"ordem": 27,
+"quarto": "Q:608",
+"leito": "L:3",
+"perfil": "SUS",
+"especialidade": "CARDIO CLÍNICO",
+"observacao": null
+},
+{
+"bloco": "AP700",
+"ordem": 1,
+"quarto": "Q:700",
+"leito": "L:1",
+"perfil": "SUS",
+"especialidade": "CARDIO CLÍNICO",
+"observacao": null
+},
+{
+"bloco": "AP700",
+"ordem": 2,
+"quarto": "Q:700",
+"leito": "L:2",
+"perfil": "SUS",
+"especialidade": "CARDIO CLÍNICO",
+"observacao": null
+},
+{
+"bloco": "AP700",
+"ordem": 3,
+"quarto": "Q:700",
+"leito": "L:3",
+"perfil": "SUS",
+"especialidade": "CARDIO CLÍNICO",
+"observacao": null
+},
+{
+"bloco": "AP700",
+"ordem": 4,
+"quarto": "Q:701",
+"leito": "L:1",
+"perfil": "SUS",
+"especialidade": "CARDIO CLÍNICO",
+"observacao": null
+},
+{
+"bloco": "AP700",
+"ordem": 5,
+"quarto": "Q:701",
+"leito": "L:2",
+"perfil": "SUS",
+"especialidade": "CARDIO CLÍNICO",
+"observacao": null
+},
+{
+"bloco": "AP700",
+"ordem": 6,
+"quarto": "Q:701",
+"leito": "L:3",
+"perfil": "SUS",
+"especialidade": "CARDIO CLÍNICO",
+"observacao": null
+},
+{
+"bloco": "AP700",
+"ordem": 7,
+"quarto": "Q:702",
+"leito": "L:1",
+"perfil": "SUS",
+"especialidade": "CLÍNICA GERAL",
+"observacao": null
+},
+{
+"bloco": "AP700",
+"ordem": 8,
+"quarto": "Q:702",
+"leito": "L:2",
+"perfil": "SUS",
+"especialidade": "CLÍNICA GERAL",
+"observacao": null
+},
+{
+"bloco": "AP700",
+"ordem": 9,
+"quarto": "Q:702",
+"leito": "L:3",
+"perfil": "SUS",
+"especialidade": "CLÍNICA GERAL",
+"observacao": null
+},
+{
+"bloco": "AP700",
+"ordem": 10,
+"quarto": "Q:703",
+"leito": "L:1",
+"perfil": "SUS",
+"especialidade": "CLÍNICA GERAL",
+"observacao": null
+},
+{
+"bloco": "AP700",
+"ordem": 11,
+"quarto": "Q:703",
+"leito": "L:2",
+"perfil": "SUS",
+"especialidade": "CLÍNICA GERAL",
+"observacao": null
+},
+{
+"bloco": "AP700",
+"ordem": 12,
+"quarto": "Q:703",
+"leito": "L:3",
+"perfil": "SUS",
+"especialidade": "CLÍNICA GERAL",
+"observacao": null
+},
+{
+"bloco": "AP700",
+"ordem": 13,
+"quarto": "Q:704",
+"leito": "L:1",
+"perfil": "SUS",
+"especialidade": "CLÍNICA GERAL",
+"observacao": null
+},
+{
+"bloco": "AP700",
+"ordem": 14,
+"quarto": "Q:704",
+"leito": "L:2",
+"perfil": "SUS",
+"especialidade": "CLÍNICA GERAL",
+"observacao": null
+},
+{
+"bloco": "AP700",
+"ordem": 15,
+"quarto": "Q:704",
+"leito": "L:3",
+"perfil": "SUS",
+"especialidade": "CLÍNICA GERAL",
+"observacao": null
+},
+{
+"bloco": "AP700",
+"ordem": 16,
+"quarto": "Q:705",
+"leito": "L:1",
+"perfil": "SUS",
+"especialidade": "CLÍNICA GERAL",
+"observacao": null
+},
+{
+"bloco": "AP700",
+"ordem": 17,
+"quarto": "Q:705",
+"leito": "L:2",
+"perfil": "SUS",
+"especialidade": "CLÍNICA GERAL",
+"observacao": null
+},
+{
+"bloco": "AP700",
+"ordem": 18,
+"quarto": "Q:705",
+"leito": "L:3",
+"perfil": "SUS",
+"especialidade": "CLÍNICA GERAL",
+"observacao": null
+},
+{
+"bloco": "AP700",
+"ordem": 19,
+"quarto": "Q:706",
+"leito": "L:1",
+"perfil": "SUS",
+"especialidade": "CLÍNICA GERAL",
+"observacao": null
+},
+{
+"bloco": "AP700",
+"ordem": 20,
+"quarto": "Q:706",
+"leito": "L:2",
+"perfil": "SUS",
+"especialidade": "NEFRO/URO CLÍNICO",
+"observacao": null
+},
+{
+"bloco": "AP700",
+"ordem": 21,
+"quarto": "Q:706",
+"leito": "L:3",
+"perfil": "SUS",
+"especialidade": "NEFRO/URO CLÍNICO",
+"observacao": null
+},
+{
+"bloco": "UTI",
+"ordem": 1,
+"quarto": "BOX",
+"leito": "01",
+"perfil": "SUS",
+"especialidade": "CTI CARDIO",
+"observacao": null
+},
+{
+"bloco": "UTI",
+"ordem": 2,
+"quarto": "BOX",
+"leito": "02",
+"perfil": "SUS",
+"especialidade": "CTI CARDIO",
+"observacao": null
+},
+{
+"bloco": "UTI",
+"ordem": 3,
+"quarto": "BOX",
+"leito": "03",
+"perfil": "SUS",
+"especialidade": "CTI CARDIO",
+"observacao": null
+},
+{
+"bloco": "UTI",
+"ordem": 4,
+"quarto": "BOX",
+"leito": "04",
+"perfil": "SUS",
+"especialidade": "CTI CARDIO",
+"observacao": null
+},
+{
+"bloco": "UTI",
+"ordem": 5,
+"quarto": "BOX",
+"leito": "05",
+"perfil": "SUS",
+"especialidade": "CTI CARDIO",
+"observacao": null
+},
+{
+"bloco": "UTI",
+"ordem": 6,
+"quarto": "BOX",
+"leito": "06",
+"perfil": "SUS",
+"especialidade": "CTI CARDIO",
+"observacao": null
+},
+{
+"bloco": "UTI",
+"ordem": 7,
+"quarto": "BOX",
+"leito": "07",
+"perfil": "SUS",
+"especialidade": "CTI CARDIO",
+"observacao": null
+},
+{
+"bloco": "UTI",
+"ordem": 8,
+"quarto": "BOX",
+"leito": "08",
+"perfil": "SUS",
+"especialidade": "CTI CARDIO",
+"observacao": null
+},
+{
+"bloco": "UTI",
+"ordem": 9,
+"quarto": "BOX",
+"leito": "09",
+"perfil": "SUS",
+"especialidade": "CTI CARDIO",
+"observacao": null
+},
+{
+"bloco": "UTI",
+"ordem": 10,
+"quarto": "BOX",
+"leito": "10",
+"perfil": "SUS",
+"especialidade": "CTI CARDIO",
+"observacao": null
+},
+{
+"bloco": "UTI",
+"ordem": 11,
+"quarto": "BOX",
+"leito": "01",
+"perfil": "SUS",
+"especialidade": "CTI GERAL 1",
+"observacao": null
+},
+{
+"bloco": "UTI",
+"ordem": 12,
+"quarto": "BOX",
+"leito": "02",
+"perfil": "SUS",
+"especialidade": "CTI GERAL 1",
+"observacao": null
+},
+{
+"bloco": "UTI",
+"ordem": 13,
+"quarto": "BOX",
+"leito": "03",
+"perfil": "SUS",
+"especialidade": "CTI GERAL 1",
+"observacao": null
+},
+{
+"bloco": "UTI",
+"ordem": 14,
+"quarto": "BOX",
+"leito": "04",
+"perfil": "SUS",
+"especialidade": "CTI GERAL 1",
+"observacao": null
+},
+{
+"bloco": "UTI",
+"ordem": 15,
+"quarto": "BOX",
+"leito": "05",
+"perfil": "SUS",
+"especialidade": "CTI GERAL 1",
+"observacao": null
+},
+{
+"bloco": "UTI",
+"ordem": 16,
+"quarto": "BOX",
+"leito": "06",
+"perfil": "SUS",
+"especialidade": "CTI GERAL 1",
+"observacao": null
+},
+{
+"bloco": "UTI",
+"ordem": 17,
+"quarto": "BOX",
+"leito": "07",
+"perfil": "SUS",
+"especialidade": "CTI GERAL 1",
+"observacao": null
+},
+{
+"bloco": "UTI",
+"ordem": 18,
+"quarto": "BOX",
+"leito": "08",
+"perfil": "SUS",
+"especialidade": "CTI GERAL 1",
+"observacao": null
+},
+{
+"bloco": "UTI",
+"ordem": 19,
+"quarto": "BOX",
+"leito": "09",
+"perfil": "SUS",
+"especialidade": "CTI GERAL 1",
+"observacao": null
+},
+{
+"bloco": "UTI",
+"ordem": 20,
+"quarto": "BOX",
+"leito": "10",
+"perfil": "SUS",
+"especialidade": "CTI GERAL 1",
+"observacao": null
+},
+{
+"bloco": "UTI",
+"ordem": 21,
+"quarto": "BOX",
+"leito": "01",
+"perfil": "SUS",
+"especialidade": "CTI GERAL 2",
+"observacao": null
+},
+{
+"bloco": "UTI",
+"ordem": 22,
+"quarto": "BOX",
+"leito": "02",
+"perfil": "SUS",
+"especialidade": "CTI GERAL 2",
+"observacao": null
+},
+{
+"bloco": "UTI",
+"ordem": 23,
+"quarto": "BOX",
+"leito": "03",
+"perfil": "SUS",
+"especialidade": "CTI GERAL 2",
+"observacao": null
+},
+{
+"bloco": "UTI",
+"ordem": 24,
+"quarto": "BOX",
+"leito": "04",
+"perfil": "SUS",
+"especialidade": "CTI GERAL 2",
+"observacao": null
+},
+{
+"bloco": "UTI",
+"ordem": 25,
+"quarto": "BOX",
+"leito": "05",
+"perfil": "SUS",
+"especialidade": "CTI GERAL 2",
+"observacao": null
+},
+{
+"bloco": "UTI",
+"ordem": 26,
+"quarto": "BOX",
+"leito": "06",
+"perfil": "CONV/PART",
+"especialidade": "CTI GERAL 2",
+"observacao": null
+},
+{
+"bloco": "UTI",
+"ordem": 27,
+"quarto": "BOX",
+"leito": "07",
+"perfil": "CONV/PART",
+"especialidade": "CTI GERAL 2",
+"observacao": null
+},
+{
+"bloco": "UTI",
+"ordem": 28,
+"quarto": "BOX",
+"leito": "08",
+"perfil": "CONV/PART",
+"especialidade": "CTI GERAL 2",
+"observacao": null
+},
+{
+"bloco": "UTI",
+"ordem": 29,
+"quarto": "BOX",
+"leito": "09",
+"perfil": "CONV/PART",
+"especialidade": "CTI GERAL 2",
+"observacao": null
+},
+{
+"bloco": "UTI",
+"ordem": 30,
+"quarto": "BOX",
+"leito": "10",
+"perfil": "CONV/PART",
+"especialidade": "CTI GERAL 2",
+"observacao": null
+},
+{
+"bloco": "PS",
+"ordem": 1,
+"quarto": "PS",
+"leito": "01",
+"perfil": "SUS",
+"especialidade": "-",
+"observacao": null
+},
+{
+"bloco": "PS",
+"ordem": 2,
+"quarto": "PS",
+"leito": "02",
+"perfil": "SUS",
+"especialidade": "-",
+"observacao": null
+},
+{
+"bloco": "PS",
+"ordem": 3,
+"quarto": "PS",
+"leito": "03",
+"perfil": "SUS",
+"especialidade": "-",
+"observacao": null
+},
+{
+"bloco": "PS",
+"ordem": 4,
+"quarto": "PS",
+"leito": "04",
+"perfil": "SUS",
+"especialidade": "-",
+"observacao": null
+},
+{
+"bloco": "PS",
+"ordem": 5,
+"quarto": "PS",
+"leito": "05",
+"perfil": "SUS",
+"especialidade": "-",
+"observacao": null
+},
+{
+"bloco": "PS",
+"ordem": 6,
+"quarto": "PS",
+"leito": "06",
+"perfil": "SUS",
+"especialidade": "-",
+"observacao": null
+},
+{
+"bloco": "PS",
+"ordem": 7,
+"quarto": "PS",
+"leito": "07",
+"perfil": "SUS",
+"especialidade": "-",
+"observacao": null
+},
+{
+"bloco": "PS",
+"ordem": 8,
+"quarto": "PS",
+"leito": "08",
+"perfil": "SUS",
+"especialidade": "-",
+"observacao": null
+},
+{
+"bloco": "PS",
+"ordem": 9,
+"quarto": "PS",
+"leito": "09",
+"perfil": "SUS",
+"especialidade": "-",
+"observacao": null
+},
+{
+"bloco": "PS",
+"ordem": 10,
+"quarto": "PS",
+"leito": "10",
+"perfil": "SUS",
+"especialidade": "-",
+"observacao": null
+},
+{
+"bloco": "PS",
+"ordem": 11,
+"quarto": "PS",
+"leito": "11",
+"perfil": "SUS",
+"especialidade": "-",
+"observacao": null
+},
+{
+"bloco": "PS",
+"ordem": 12,
+"quarto": "PS",
+"leito": "12",
+"perfil": "SUS",
+"especialidade": "-",
+"observacao": null
+},
+{
+"bloco": "PS",
+"ordem": 13,
+"quarto": "PS",
+"leito": "13",
+"perfil": "SUS",
+"especialidade": "-",
+"observacao": null
+},
+{
+"bloco": "PS",
+"ordem": 14,
+"quarto": "PS",
+"leito": "14",
+"perfil": "SUS",
+"especialidade": "-",
+"observacao": null
+},
+{
+"bloco": "PS",
+"ordem": 15,
+"quarto": "PS",
+"leito": "15",
+"perfil": "SUS",
+"especialidade": "-",
+"observacao": null
+},
+{
+"bloco": "PS",
+"ordem": 16,
+"quarto": "PS",
+"leito": "16",
+"perfil": "SUS",
+"especialidade": "-",
+"observacao": null
+},
+{
+"bloco": "PS",
+"ordem": 17,
+"quarto": "PS",
+"leito": "17",
+"perfil": "SUS",
+"especialidade": "-",
+"observacao": null
+},
+{
+"bloco": "PS",
+"ordem": 18,
+"quarto": "PS",
+"leito": "18",
+"perfil": "SUS",
+"especialidade": "-",
+"observacao": null
+},
+{
+"bloco": "PS",
+"ordem": 19,
+"quarto": "PS",
+"leito": "19",
+"perfil": "SUS",
+"especialidade": "-",
+"observacao": null
+},
+{
+"bloco": "PS",
+"ordem": 20,
+"quarto": "PS",
+"leito": "20",
+"perfil": "SUS",
+"especialidade": "-",
+"observacao": null
+},
+{
+"bloco": "PS",
+"ordem": 21,
+"quarto": "PS",
+"leito": "21",
+"perfil": "SUS",
+"especialidade": "-",
+"observacao": "Virtual"
+},
+{
+"bloco": "PA",
+"ordem": 1,
+"quarto": "PA",
+"leito": "01",
+"perfil": "CONV/PART",
+"especialidade": "-",
+"observacao": null
+},
+{
+"bloco": "PA",
+"ordem": 2,
+"quarto": "PA",
+"leito": "02",
+"perfil": "CONV/PART",
+"especialidade": "-",
+"observacao": null
+},
+{
+"bloco": "PA",
+"ordem": 3,
+"quarto": "PA",
+"leito": "03",
+"perfil": "CONV/PART",
+"especialidade": "-",
+"observacao": null
+},
+{
+"bloco": "PA",
+"ordem": 4,
+"quarto": "PA",
+"leito": "04",
+"perfil": "CONV/PART",
+"especialidade": "-",
+"observacao": null
+},
+{
+"bloco": "PA",
+"ordem": 5,
+"quarto": "PA",
+"leito": "05",
+"perfil": "CONV/PART",
+"especialidade": "-",
+"observacao": null
+},
+{
+"bloco": "PA",
+"ordem": 6,
+"quarto": "PA",
+"leito": "06",
+"perfil": "CONV/PART",
+"especialidade": "-",
+"observacao": null
+},
+{
+"bloco": "PA",
+"ordem": 7,
+"quarto": "PA",
+"leito": "07",
+"perfil": "CONV/PART",
+"especialidade": "-",
+"observacao": null
+},
+{
+"bloco": "PA",
+"ordem": 8,
+"quarto": "PA",
+"leito": "08",
+"perfil": "CONV/PART",
+"especialidade": "-",
+"observacao": null
+},
+{
+"bloco": "PA",
+"ordem": 9,
+"quarto": "PA",
+"leito": "09",
+"perfil": "CONV/PART",
+"especialidade": "-",
+"observacao": null
+},
+{
+"bloco": "PA",
+"ordem": 10,
+"quarto": "PA",
+"leito": "10",
+"perfil": "CONV/PART",
+"especialidade": "-",
+"observacao": "Virtual"
+},
+{
+"bloco": "PA",
+"ordem": 11,
+"quarto": "PA",
+"leito": "11",
+"perfil": "CONV/PART",
+"especialidade": "-",
+"observacao": "Virtual"
+},
+{
+"bloco": "PA",
+"ordem": 12,
+"quarto": "PA",
+"leito": "12",
+"perfil": "CONV/PART",
+"especialidade": "-",
+"observacao": "Virtual"
+},
+{
+"bloco": "PA",
+"ordem": 13,
+"quarto": "PA",
+"leito": "13",
+"perfil": "CONV/PART",
+"especialidade": "-",
+"observacao": "Virtual"
+},
+{
+"bloco": "PA",
+"ordem": 14,
+"quarto": "PA",
+"leito": "14",
+"perfil": "CONV/PART",
+"especialidade": "-",
+"observacao": "Virtual"
+},
+{
+"bloco": "PA",
+"ordem": 15,
+"quarto": "PA",
+"leito": "15",
+"perfil": "CONV/PART",
+"especialidade": "-",
+"observacao": "Virtual"
+},
+{
+"bloco": "PA",
+"ordem": 16,
+"quarto": "PA",
+"leito": "16",
+"perfil": "CONV/PART",
+"especialidade": "-",
+"observacao": "Virtual"
+},
+{
+"bloco": "PA",
+"ordem": 17,
+"quarto": "PA",
+"leito": "17",
+"perfil": "CONV/PART",
+"especialidade": "-",
+"observacao": "Virtual"
+},
+{
+"bloco": "PA",
+"ordem": 18,
+"quarto": "PA",
+"leito": "18",
+"perfil": "CONV/PART",
+"especialidade": "-",
+"observacao": "Virtual"
+},
+{
+"bloco": "PA",
+"ordem": 19,
+"quarto": "PA",
+"leito": "19",
+"perfil": "CONV/PART",
+"especialidade": "-",
+"observacao": "Virtual"
+},
+{
+"bloco": "PA",
+"ordem": 20,
+"quarto": "PA",
+"leito": "20",
+"perfil": "CONV/PART",
+"especialidade": "-",
+"observacao": "Virtual"
+},
+{
+"bloco": "PA",
+"ordem": 21,
+"quarto": "PA",
+"leito": "21",
+"perfil": "CONV/PART",
+"especialidade": "-",
+"observacao": "Virtual"
+},
+{
+"bloco": "PA",
+"ordem": 22,
+"quarto": "PA",
+"leito": "22",
+"perfil": "CONV/PART",
+"especialidade": "-",
+"observacao": "Virtual"
+},
+{
+"bloco": "PA",
+"ordem": 23,
+"quarto": "PA",
+"leito": "23",
+"perfil": "CONV/PART",
+"especialidade": "-",
+"observacao": "Virtual"
+},
+{
+"bloco": "PA",
+"ordem": 24,
+"quarto": "PA",
+"leito": "24",
+"perfil": "CONV/PART",
+"especialidade": "-",
+"observacao": "Virtual"
+}
+]

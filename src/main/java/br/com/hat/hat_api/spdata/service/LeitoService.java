@@ -6,6 +6,7 @@ import br.com.hat.hat_api.spdata.dto.TaxaOcupacaoDTO;
 import br.com.hat.hat_api.spdata.repository.LeitoRepository;
 import br.com.hat.hat_api.spdata.dto.FichaInternacaoDTO;
 import br.com.hat.hat_api.spdata.dto.SaidaDTO;
+import br.com.hat.hat_api.spdata.dto.LeitoOcupacaoDTO;
 import br.com.hat.hat_api.spdata.util.Carater;
 import br.com.hat.hat_api.spdata.util.MotivoSaida;
 import br.com.hat.hat_api.spdata.util.Texto;
@@ -39,6 +40,45 @@ public class LeitoService {
                         ((Number) obj[5]).intValue()
                 ))
                 .toList();
+    }
+
+    /** Leitos ativos agora, com o paciente quando ocupado (lista e ficha da Taxa de ocupação). */
+    public List<LeitoOcupacaoDTO> getLeitosOcupacao(List<String> blocos) {
+        return leitoRepository.findLeitosOcupacao(blocos).stream().map(r -> {
+            Integer codigoConvenio = r[12] != null ? ((Number) r[12]).intValue() : null;
+            Integer codigoCarater = Carater.codigo(r[16]);
+            String cid2 = Texto.limpo(r[19]);
+            boolean temCid2 = cid2 != null && !cid2.isEmpty();
+            boolean ocupado = r[0] != null;
+            return new LeitoOcupacaoDTO(
+                    Texto.limpo(r[5]),
+                    Texto.limpo(r[22]),
+                    Texto.limpo(r[23]),
+                    Texto.limpo(r[24]),
+                    ocupado ? ((Number) r[0]).longValue() : null,
+                    r[1] != null ? ((Number) r[1]).longValue() : null,
+                    dataHora(r[2], r[3]),
+                    r[4] != null ? ((java.sql.Date) r[4]).toLocalDate() : null,
+                    Texto.limpo(r[7]),
+                    r[8] != null ? ((java.sql.Date) r[8]).toLocalDate() : null,
+                    Texto.limpo(r[9]),
+                    Texto.limpo(r[10]),
+                    Texto.limpo(r[11]),
+                    codigoConvenio,
+                    Texto.limpo(r[13]),
+                    ocupado ? tipoDoConvenio(codigoConvenio) : null,
+                    Texto.limpo(r[14]),
+                    Texto.limpo(r[15]),
+                    codigoCarater,
+                    ocupado ? Carater.grupo(codigoCarater) : null,
+                    Texto.limpo(r[17]),
+                    Texto.limpo(r[18]),
+                    temCid2 ? cid2 : null,
+                    temCid2 ? Texto.limpo(r[20]) : null,
+                    codigoProcedimento(r[21]),
+                    nomeProcedimento(r[21], r[12])
+            );
+        }).toList();
     }
 
     /** SUS = convênio 1, Particular = convênio 2, os demais = Convenio (regra do painel). */

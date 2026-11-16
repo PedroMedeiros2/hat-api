@@ -29,6 +29,8 @@ public final class Permissoes {
     public static final String CENTRO_CIRURGICO = "indicadores:centro-cirurgico:ver";
     /** HAT0012: hemodinamica. */
     public static final String HEMODINAMICA = "indicadores:hemodinamica:ver";
+    /** Cadastro CNES do painel: criar, mudar e desativar leitos e ver o historico. */
+    public static final String CNES_EDITAR = "indicadores:cnes:editar";
 
     /** Metodo + prefixo da rota (sem barra no fim) -> permissao; {@code null} = basta ter entrado. A primeira que casar vale. */
     record Regra(HttpMethod metodo, String rota, String permissao) {
@@ -41,6 +43,11 @@ public final class Permissoes {
             new Regra(HttpMethod.GET, "/api/leitos/ficha", MOVIMENTACAO),
             new Regra(HttpMethod.GET, "/api/leitos/ocupacao-geral", OCUPACAO_GERAL),
             new Regra(HttpMethod.GET, "/api/leitos/ocupacao-cnes", OCUPACAO_CNES),
+            // cadastro CNES: a leitura serve as telas de ocupacao (sem pacientes); mudar e o historico pedem a permissao propria
+            new Regra(HttpMethod.GET, "/api/cnes/leitos", null),
+            new Regra(HttpMethod.GET, "/api/cnes/historico", CNES_EDITAR),
+            new Regra(HttpMethod.POST, "/api/cnes", CNES_EDITAR),
+            new Regra(HttpMethod.PUT, "/api/cnes", CNES_EDITAR),
             new Regra(HttpMethod.GET, "/api/exames/cardiologia", EXAMES_CARDIOLOGICOS),
             new Regra(HttpMethod.GET, "/api/exames/imagem", EXAMES_IMAGEM),
             new Regra(HttpMethod.GET, "/api/atendimentos", ATENDIMENTOS),

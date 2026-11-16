@@ -33,6 +33,18 @@ public class LeitoController {
         return ResponseEntity.ok(ocupacao);
     }
 
+    /** Leitos ativos agora, um a um (HAT0007): mesma permissão da ocupação operacional. */
+    @GetMapping("/ocupacao-geral/leitos")
+    public ResponseEntity<?> getLeitosOcupacaoGeral(@RequestParam(required = false) List<String> blocos) {
+        return ResponseEntity.ok(leitoService.getLeitosOcupacao(blocoService.resolverBlocos(blocos)));
+    }
+
+    /** Leitos ativos agora, um a um (HAT0008): mesma permissão da ocupação oficial (CNES). */
+    @GetMapping("/ocupacao-cnes/leitos")
+    public ResponseEntity<?> getLeitosOcupacaoCnes(@RequestParam(required = false) List<String> blocos) {
+        return ResponseEntity.ok(leitoService.getLeitosOcupacao(blocoService.resolverBlocos(blocos)));
+    }
+
     @GetMapping("/movimentacao")
     public ResponseEntity<?> getMovimentacao(
             @RequestParam String dataini,

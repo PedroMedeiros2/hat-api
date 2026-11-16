@@ -79,6 +79,57 @@ public interface LeitoRepository extends JpaRepository<Leito, Long> {
             """, nativeQuery = true)
     List<Object[]> getTaxaOcupacaoByBlocos(@Param("blocos") List<String> blocos);
 
+    /**
+     * Leitos ativos agora, um por linha, com o paciente quando ocupado: os mesmos filtros da contagem em
+     * getTaxaOcupacaoByBlocos (leito sem status I; ocupado = REG com internação), para a lista bater com os números.
+     */
+    @Query(value = """
+            SELECT
+                CI.reg,
+                CI.pront,
+                CI.entrada,
+                CI.horaent,
+                CI.altaprev,
+                B.BLOCO,
+                CI.leito,
+                pac.nome,
+                pac.nasc,
+                pac.sexo,
+                p1.nome AS medico_assistencial,
+                p2.nome AS medico_solicitante,
+                CI.conv,
+                v.nome AS convenio,
+                cl.nome AS clinica,
+                ti.nome AS carater,
+                CI.carint,
+                c1.cod AS cid1_cod,
+                c1.nome AS cid1_nome,
+                c2.cod AS cid2_cod,
+                c2.nome AS cid2_nome,
+                CI.proced,
+                L.ACOMOD AS quarto,
+                L.LEITO,
+                L.STATUS
+            FROM
+                RILEITOS L
+                INNER JOIN RIACOMOD A ON L.ACOMOD = A.ACOMOD
+                INNER JOIN RIBLOCOS B ON B.BLOCO = A.BLOCO AND B.BLOCO = L.BLOCO
+                LEFT JOIN RICADINT CI ON CI.REG = L.REG AND L.REG <> 0
+                LEFT JOIN ricadpac pac       ON pac.pront = CI.pront
+                LEFT JOIN tbprofis p1        ON p1.cnpj_cpf = CI.medass
+                LEFT JOIN tbprofis p2        ON p2.cnpj_cpf = CI.medsol
+                LEFT JOIN tbconven v         ON v.cod = CI.conv
+                LEFT JOIN tbclinica cl       ON cl.cod = CI.clinica
+                LEFT JOIN tbcarateratend ti  ON ti.id = CI.carint
+                LEFT JOIN tbcid10 c1         ON c1.id = CI.id_tbcid10_principal
+                LEFT JOIN tbcid10 c2         ON c2.id = CI.id_tbcid10_secundario
+            WHERE
+                B.BLOCO IN (:blocos)
+                AND L.STATUS <> 'I'
+            ORDER BY B.ORDEM, B.NOME, L.ACOMOD, L.LEITO
+            """, nativeQuery = true)
+    List<Object[]> findLeitosOcupacao(@Param("blocos") List<String> blocos);
+
     @Query(value = """
             SELECT B.BLOCO
             FROM RIBLOCOS B
