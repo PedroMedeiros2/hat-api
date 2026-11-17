@@ -25,7 +25,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 /** So o token do GAW com a permissao do indicador abre a rota; o resto e negado. */
 @WebMvcTest(controllers = {CensoController.class, FeriadoController.class})
 @Import(SecurityConfig.class)
-@TestPropertySource(properties = "hat.gaw.issuer=http://gaw.teste")
+@TestPropertySource(properties = {"hat.gaw.issuer=http://gaw.teste", "hat.ocupacao.foto.ligada=false", "hat.banco.url="})
 class SegurancaTest {
 
     @Autowired

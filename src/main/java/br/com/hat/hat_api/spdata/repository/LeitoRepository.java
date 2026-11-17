@@ -181,6 +181,20 @@ public interface LeitoRepository extends JpaRepository<Leito, Long> {
             """, nativeQuery = true)
     List<String> findBlocosAtivos();
 
+    /**
+     * Passagens pelos leitos (RICTRLOC) que tocam o período, para reconstruir a ocupação de dias passados
+     * (histórico da Taxa de ocupação). Só contagens: [bloco, quarto, leito, entrada, hora da entrada, saída,
+     * hora da saída, código do convênio]. Saída em aberto (paciente ainda no leito) vem como 30/12/1899.
+     */
+    @Query(value = """
+            SELECT rl.BLOCO, rl.ACOMOD, rl.LEITO, rl.ENTRADA, rl.HORAENT, rl.SAIDA, rl.HORASAI, ci.CONV
+            FROM RICTRLOC rl
+            LEFT JOIN RICADINT ci ON ci.REG = rl.REG
+            WHERE rl.ENTRADA <= CAST(:fim AS DATE)
+              AND (rl.SAIDA = CAST('1899-12-30' AS DATE) OR rl.SAIDA >= CAST(:inicio AS DATE))
+            """, nativeQuery = true)
+    List<Object[]> findPassagens(@Param("inicio") String inicio, @Param("fim") String fim);
+
 
     /** Internações pela data de entrada. Por dia e convênio: [data, código do convênio, nome do convênio, quantidade]. */
     @Query(value = """

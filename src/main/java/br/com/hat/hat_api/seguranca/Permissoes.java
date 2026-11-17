@@ -43,6 +43,9 @@ public final class Permissoes {
             new Regra(HttpMethod.GET, "/api/leitos/internacoes", MOVIMENTACAO),
             new Regra(HttpMethod.GET, "/api/leitos/saidas", MOVIMENTACAO),
             new Regra(HttpMethod.GET, "/api/leitos/ficha", MOVIMENTACAO),
+            // historico (foto diaria, so contagens) e a lista leito a leito entram pelo prefixo da ocupacao
+            new Regra(HttpMethod.GET, "/api/leitos/ocupacao-geral/historico", OCUPACAO_GERAL),
+            new Regra(HttpMethod.GET, "/api/leitos/ocupacao-cnes/historico", OCUPACAO_CNES),
             new Regra(HttpMethod.GET, "/api/leitos/ocupacao-geral", OCUPACAO_GERAL),
             new Regra(HttpMethod.GET, "/api/leitos/ocupacao-cnes", OCUPACAO_CNES),
             // cadastro CNES: a leitura serve as telas de ocupacao (sem pacientes); mudar e o historico pedem a permissao propria
