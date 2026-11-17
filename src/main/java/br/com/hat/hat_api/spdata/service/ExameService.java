@@ -40,7 +40,10 @@ public class ExameService {
                 Texto.limpo(obj[3]),
                 Texto.limpo(obj[4]),
                 Texto.limpo(obj[5]),
-                Texto.limpo(obj[6])
+                Texto.limpo(obj[6]),
+                obj[7] != null ? ((Number) obj[7]).intValue() : null,
+                Texto.limpo(obj[8]),
+                (Date) obj[9]
         );
     }
 }

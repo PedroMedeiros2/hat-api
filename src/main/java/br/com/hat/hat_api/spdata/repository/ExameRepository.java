@@ -32,7 +32,10 @@ public interface ExameRepository extends JpaRepository<Exame, Long> {
                         WHEN 'MA' THEN 'Mapa'
                         WHEN 'TEST' THEN 'Esteira'
                         WHEN 'ECG' THEN 'Eletrocardiograma'
-                    END AS ato
+                    END AS ato,
+                    tb.cod AS cod_convenio,
+                    tb.nome AS nome_convenio,
+                    sl.data_hora_inclusao AS data_hora
             
                 FROM silanexa sl
                 LEFT JOIN sicadate sc ON sl.id_sicadate = sc.id
@@ -74,7 +77,10 @@ public interface ExameRepository extends JpaRepository<Exame, Long> {
                         when sl.ato = 25 then 'Tomografia'
                         when sl.ato = 16 then 'Radiologia'
                         when sl.ato = 24 then 'Ultrassonografia'
-                    end as ato
+                    end as ato,
+                    tb.cod as cod_convenio,
+                    tb.nome as nome_convenio,
+                    sl.data_hora_inclusao as data_hora
             
                 from silanexa sl
             
