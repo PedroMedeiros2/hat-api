@@ -130,6 +130,44 @@ public interface LeitoRepository extends JpaRepository<Leito, Long> {
             """, nativeQuery = true)
     List<Object[]> findLeitosOcupacao(@Param("blocos") List<String> blocos);
 
+    /**
+     * Pacientes internados agora (tela Pacientes internados, HAT0013): leitos ativos dos blocos pedidos,
+     * com o paciente e a filiação (mãe e pai do RICADPAC) quando o leito está ocupado. Leito livre vem com
+     * REG nulo e serve só para contar os leitos do bloco. Dado pessoal sensível: só para esta tela.
+     */
+    @Query(value = """
+            SELECT
+                CI.reg,
+                CI.pront,
+                CI.entrada,
+                CI.horaent,
+                B.BLOCO,
+                L.ACOMOD AS quarto,
+                L.LEITO,
+                pac.nome,
+                pac.nasc,
+                pac.sexo,
+                pac.mae,
+                pac.pai,
+                p1.nome AS medico_assistencial,
+                v.nome AS convenio,
+                cl.nome AS clinica
+            FROM
+                RILEITOS L
+                INNER JOIN RIACOMOD A ON L.ACOMOD = A.ACOMOD
+                INNER JOIN RIBLOCOS B ON B.BLOCO = A.BLOCO AND B.BLOCO = L.BLOCO
+                LEFT JOIN RICADINT CI ON CI.REG = L.REG AND L.REG <> 0
+                LEFT JOIN ricadpac pac  ON pac.pront = CI.pront
+                LEFT JOIN tbprofis p1   ON p1.cnpj_cpf = CI.medass
+                LEFT JOIN tbconven v    ON v.cod = CI.conv
+                LEFT JOIN tbclinica cl  ON cl.cod = CI.clinica
+            WHERE
+                B.BLOCO IN (:blocos)
+                AND L.STATUS <> 'I'
+            ORDER BY B.ORDEM, B.NOME, L.ACOMOD, L.LEITO
+            """, nativeQuery = true)
+    List<Object[]> findInternados(@Param("blocos") List<String> blocos);
+
     @Query(value = """
             SELECT B.BLOCO
             FROM RIBLOCOS B

@@ -29,6 +29,8 @@ public final class Permissoes {
     public static final String CENTRO_CIRURGICO = "indicadores:centro-cirurgico:ver";
     /** HAT0012: hemodinamica. */
     public static final String HEMODINAMICA = "indicadores:hemodinamica:ver";
+    /** HAT0013: pacientes internados (nome, nascimento e filiacao: dado pessoal sensivel, consulta registrada). */
+    public static final String INTERNADOS = "indicadores:internados:ver";
     /** Cadastro CNES do painel: criar, mudar e desativar leitos e ver o historico. */
     public static final String CNES_EDITAR = "indicadores:cnes:editar";
 
@@ -56,6 +58,8 @@ public final class Permissoes {
             new Regra(HttpMethod.GET, "/api/censo", CENSO),
             new Regra(HttpMethod.GET, "/api/centro-cirurgico", CENTRO_CIRURGICO),
             new Regra(HttpMethod.GET, "/api/hemodinamica", HEMODINAMICA),
+            new Regra(HttpMethod.GET, "/api/internados", INTERNADOS),
+            new Regra(HttpMethod.POST, "/api/internados/consultas", INTERNADOS),
             // feriados (contas de dias uteis em varias telas): nenhum dado de paciente
             new Regra(HttpMethod.GET, "/api/feriados", null)
     );
