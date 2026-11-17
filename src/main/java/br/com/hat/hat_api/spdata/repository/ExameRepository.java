@@ -35,7 +35,11 @@ public interface ExameRepository extends JpaRepository<Exame, Long> {
                     END AS ato,
                     tb.cod AS cod_convenio,
                     tb.nome AS nome_convenio,
-                    sl.data_hora_inclusao AS data_hora
+                    sl.data_hora_inclusao AS data_hora,
+                    sc.pront,
+                    pac.nome AS paciente,
+                    pac.nasc AS nascimento,
+                    pac.sexo
             
                 FROM silanexa sl
                 LEFT JOIN sicadate sc ON sl.id_sicadate = sc.id
@@ -45,6 +49,8 @@ public interface ExameRepository extends JpaRepository<Exame, Long> {
                     GROUP BY codalf, ato
                 ) sp ON sp.codalf = sl.exame AND sp.ato = sl.ato
                 LEFT JOIN tbconven tb ON tb.cod = sc.conv
+                -- paciente do exame (ficha na tela de Exames): prontuário do atendimento
+                LEFT JOIN ricadpac pac ON pac.pront = sc.pront
                 WHERE
                     sl.data BETWEEN :dataini AND :datafim
                     AND sl.pend_sadt = 'F'
@@ -80,7 +86,11 @@ public interface ExameRepository extends JpaRepository<Exame, Long> {
                     end as ato,
                     tb.cod as cod_convenio,
                     tb.nome as nome_convenio,
-                    sl.data_hora_inclusao as data_hora
+                    sl.data_hora_inclusao as data_hora,
+                    sc.pront,
+                    pac.nome as paciente,
+                    pac.nasc as nascimento,
+                    pac.sexo
             
                 from silanexa sl
             
@@ -93,6 +103,8 @@ public interface ExameRepository extends JpaRepository<Exame, Long> {
                 ) sp on sp.codalf = sl.exame and sp.ato = sl.ato
             
                 left join tbconven tb on tb.cod = sc.conv
+                -- paciente do exame (ficha na tela de Exames): prontuário do atendimento
+                left join ricadpac pac on pac.pront = sc.pront
             
                 where sl.ato in (14, 25, 16, 24)
                   and sl.pend_sadt = 'F'

@@ -43,7 +43,11 @@ public class ExameService {
                 Texto.limpo(obj[6]),
                 obj[7] != null ? ((Number) obj[7]).intValue() : null,
                 Texto.limpo(obj[8]),
-                (Date) obj[9]
+                (Date) obj[9],
+                obj[10] != null ? ((Number) obj[10]).longValue() : null,
+                Texto.limpo(obj[11]),
+                (Date) obj[12],
+                Texto.limpo(obj[13])
         );
     }
 }

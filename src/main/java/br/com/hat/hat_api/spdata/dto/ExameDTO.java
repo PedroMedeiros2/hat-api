@@ -15,5 +15,11 @@ public record ExameDTO(
         /** Nome do convênio no cadastro (tbconven.nome) */
         String nomeConvenio,
         /** Data e hora do lançamento do exame (silanexa.data_hora_inclusao) */
-        Date dataHora
+        Date dataHora,
+        /** Prontuário do paciente (sicadate.pront) */
+        Long pront,
+        /** Paciente (ricadpac): nome, nascimento e sexo, para a ficha */
+        String paciente,
+        Date nascimento,
+        String sexo
 ) {}
